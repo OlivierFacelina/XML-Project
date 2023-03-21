@@ -29,13 +29,27 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="web-nav">
             <a href=""><img src="./assets/images/logo.png" alt="FluXML Logo" class="logo"></a>
             <div class="nav-section">
                 <a href="" class="nav-item"><img src="./assets/images/searchnormal.png" alt="Rechercher" class="nav-icon"></a>
                 <a href="" class="nav-item"><img src="./assets/images/moon.png" alt="Rechercher" class="nav-icon"></a>
                 <a href="" class="nav-item"><img src="./assets/images/heart.png" alt="Rechercher" class="nav-icon"></a>
                 <a href="" class="nav-item"><img src="./assets/images/infocircle.png" alt="Rechercher" class="nav-icon"></a>
+            </div>
+        </nav>
+
+        <nav class="category-nav">
+            <hr class="category-hr">
+            <div class="categories">
+                <h2>Insolite</h2>
+                <h2>Politique</h2>
+                <h2>Sport</h2>
+                <h2>Gastronomie</h2>
+                <h2>Culture</h2>
+                <h2>Cinéma</h2>
+                <h2>Musique</h2>
+                <h2>High-tech</h2>
             </div>
         </nav>
     </header>
