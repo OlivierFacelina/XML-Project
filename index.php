@@ -1,5 +1,5 @@
 <?php $xml = simplexml_load_file('http://www.ouest-france.fr/rss-en-continu.xml');
-var_dump($xml);
+// var_dump($xml);
 // Accéder aux éléments XML
 // $titre = $xml->channel->title;
 // // $auteur = $xml->livre->auteur;
@@ -30,8 +30,22 @@ var_dump($xml);
 <body>
     <header>
         <nav>
-          
+            <a href=""><img src="./assets/images/logo.png" alt="FluXML Logo" class="logo"></a>
+            <div class="nav-section">
+                <a href="" class="nav-item"><img src="./assets/images/searchnormal.png" alt="Rechercher" class="nav-icon"></a>
+                <a href="" class="nav-item"><img src="./assets/images/moon.png" alt="Rechercher" class="nav-icon"></a>
+                <a href="" class="nav-item"><img src="./assets/images/heart.png" alt="Rechercher" class="nav-icon"></a>
+                <a href="" class="nav-item"><img src="./assets/images/infocircle.png" alt="Rechercher" class="nav-icon"></a>
+            </div>
         </nav>
     </header>
+
+    <section class="web-container">
+        <main>
+        </main>
+
+        <footer>
+        </footer>
+    </section>
 </body>
 </html>
