@@ -52,7 +52,7 @@ nav {
 }
 
 .nav-icon {
-    width: 2dvw;
+    width: 2vw;
 }
 
 
@@ -94,3 +94,11 @@ nav {
     background-color: #ffffff;
     width: 100vw;
 }
+
+/* Mode sombre / clair */
+
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+  

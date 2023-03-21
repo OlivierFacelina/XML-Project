@@ -25,7 +25,6 @@
     <title>Agregateur</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/mediaqueries/mediaqueries.css">
-    <script src="./assets/js/script.js"></script>
 </head>
 <body>
     <header>
@@ -33,7 +32,7 @@
         <nav class="web-nav">
             <div class="nav-section">
                 <a href="" class="nav-item"><img src="./assets/images/searchnormal.png" alt="Rechercher" class="nav-icon"></a>
-                <a href="" class="nav-item"><img src="./assets/images/moon.png" alt="Rechercher" class="nav-icon"></a>
+                <a href="" class="nav-item" id="moon"><img src="./assets/images/moon.png" alt="Mode" class="nav-icon" id="moon-icon"></a>
                 <a href="" class="nav-item"><img src="./assets/images/heart.png" alt="Rechercher" class="nav-icon"></a>
                 <a href="" class="nav-item"><img src="./assets/images/infocircle.png" alt="Rechercher" class="nav-icon"></a>
             </div>
@@ -41,10 +40,10 @@
 
         <nav class="category-nav">
             <div class="category-hr">
-            </div>
-            <div class="categories">
-                <!-- boucle à faire en php ici -->
-                <h2>Insolite</h2>
+                </div>
+                <div class="categories">
+                    <!-- boucle à faire en php ici -->
+                    <h2>Insolite</h2>
                 <h2>Politique</h2>
                 <h2>Sport</h2>
                 <h2>Gastronomie</h2>
@@ -63,5 +62,6 @@
         <footer>
         </footer>
     </section>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
