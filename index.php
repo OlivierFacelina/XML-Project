@@ -18,6 +18,7 @@ echo "L'auteur du livre est : $auteur";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregateur</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/mediaqueries/mediaqueries.css">
     <script src="./assets/js/script.js"></script>
 </head>
 <body>
