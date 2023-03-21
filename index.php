@@ -1,4 +1,4 @@
-<?php $xml = simplexml_load_file('http://www.ouest-france.fr/rss-en-continu.xml');
+<!-- <?php $xml = simplexml_load_file('http://www.ouest-france.fr/rss-en-continu.xml'); 
 // var_dump($xml);
 // Accéder aux éléments XML
 // $titre = $xml->channel->title;
@@ -14,7 +14,7 @@
 //     echo $title . "<br>";
 // }
 
-?>
+?>-->
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -29,8 +29,8 @@
 </head>
 <body>
     <header>
+    <a id="logo" href=""><img src="./assets/images/logo.png" alt="FluXML Logo" class="logo"></a>
         <nav class="web-nav">
-            <a href=""><img src="./assets/images/logo.png" alt="FluXML Logo" class="logo"></a>
             <div class="nav-section">
                 <a href="" class="nav-item"><img src="./assets/images/searchnormal.png" alt="Rechercher" class="nav-icon"></a>
                 <a href="" class="nav-item"><img src="./assets/images/moon.png" alt="Rechercher" class="nav-icon"></a>
@@ -40,8 +40,10 @@
         </nav>
 
         <nav class="category-nav">
-            <hr class="category-hr">
+            <div class="category-hr">
+            </div>
             <div class="categories">
+                <!-- boucle à faire en php ici -->
                 <h2>Insolite</h2>
                 <h2>Politique</h2>
                 <h2>Sport</h2>
