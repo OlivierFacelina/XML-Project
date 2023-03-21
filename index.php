@@ -1,12 +1,18 @@
-<?php $xml = simplexml_load_file('article.xml');
-
+<?php $xml = simplexml_load_file('http://www.ouest-france.fr/rss-en-continu.xml');
+var_dump($xml);
 // Accéder aux éléments XML
-$titre = $xml->livre->titre;
-$auteur = $xml->livre->auteur;
+// $titre = $xml->channel->title;
+// // $auteur = $xml->livre->auteur;
 
-// Afficher les éléments sur la page 
-echo "Le titre du livre est : $titre";
-echo "L'auteur du livre est : $auteur";
+// // Récupérer les éléments sur la page 
+// echo "Le titre du livre est : $titre";
+// echo "L'auteur du livre est : $auteur";
+
+# Récupérer tous les éléments d'un item
+// foreach ($xml->channel->item as $item) {
+//     $title = $item->title;
+//     echo $title . "<br>";
+// }
 
 ?>
 
@@ -22,6 +28,10 @@ echo "L'auteur du livre est : $auteur";
     <script src="./assets/js/script.js"></script>
 </head>
 <body>
-    
+    <header>
+        <nav>
+          
+        </nav>
+    </header>
 </body>
 </html>
