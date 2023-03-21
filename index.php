@@ -1,4 +1,4 @@
-<?php $xml = simplexml_load_file('fichier.xml');
+<?php $xml = simplexml_load_file('article.xml');
 
 // Accéder aux éléments XML
 $titre = $xml->livre->titre;
