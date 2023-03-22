@@ -25,8 +25,8 @@ $imgUrl = $xml->xpath('//enclosure/@url');
 </head>
 <body>
     <header>
-    <a id="logo" href=""><img src="./assets/images/logo.png" alt="FluXML Logo" class="logo"></a>
         <nav class="web-nav" id="web-nav">
+            <a id="logo" href=""><img src="./assets/images/logo.png" alt="FluXML Logo" class="logo"></a>
             <div class="nav-section">
                 <a href="" class="nav-item"><img src="./assets/images/searchnormal.png" alt="Rechercher" class="nav-icon"></a>
                 <a href="" class="nav-item" id="moon"><img src="./assets/images/moon.png" alt="Mode" class="nav-icon" id="moon-icon"></a>
