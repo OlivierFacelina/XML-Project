@@ -1,20 +1,13 @@
-<!-- <?php $xml = simplexml_load_file('http://www.ouest-france.fr/rss-en-continu.xml'); 
-// var_dump($xml);
-// Accéder aux éléments XML
-// $titre = $xml->channel->title;
-// // $auteur = $xml->livre->auteur;
+<?php
+$categories = ['Insolite','Politique','Sport','Gastronomie','Culture','Cinéma','Musique','High-tech'];
+$xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
 
-// // Récupérer les éléments sur la page 
-// echo "Le titre du livre est : $titre";
-// echo "L'auteur du livre est : $auteur";
-
-# Récupérer tous les éléments d'un item
-// foreach ($xml->channel->item as $item) {
-//     $title = $item->title;
-//     echo $title . "<br>";
-// }
-
-?>-->
+$titles = $xml->xpath('//title');
+$descriptions = $xml->xpath('//description');
+$publishDates = $xml->xpath('//pubDate');
+$links = $xml->xpath('//link');
+$imgUrl = $xml->xpath('//enclosure/@url');
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -40,23 +33,41 @@
 
         <nav class="category-nav">
             <div class="category-hr">
-                </div>
                 <div class="categories">
-                    <!-- boucle à faire en php ici -->
-                    <h2>Insolite</h2>
-                <h2>Politique</h2>
-                <h2>Sport</h2>
-                <h2>Gastronomie</h2>
-                <h2>Culture</h2>
-                <h2>Cinéma</h2>
-                <h2>Musique</h2>
-                <h2>High-tech</h2>
+                    <?php for ($i = 0; $i < count($categories); $i++) { ?>
+                        <h2><?= $categories[$i] ?></h2>
+                    <?php } ?>
+                </div>
             </div>
         </nav>
     </header>
 
     <section class="web-container">
         <main>
+            <section class="container">
+                <div class="category-upper">
+                    <h2 class="category-title">Insolite</h2>
+                    <a href=""><img src="./assets/images/heart.png" alt="" class="add-favourite"></a>
+                </div>
+                <hr>
+
+                <section id="articles">
+                    <?php 
+                        for ($i = 2; $i < 10; $i++) {
+                    ?>
+                        <div class="article">
+                            <a href="<?= $links[$i] ?>, " target="blank"><img src="<?= $imgUrl[$i - 2] ?>" alt="" class="article-img"></a>
+                            <div class="article-info">
+                                <div class="article-top">
+                                    <h3 class="article-title"><?= $titles[$i] ?></h3>
+                                    <h4 class="article-desc"><?= $descriptions[$i - 1] ?></h4>
+                                </div>
+                                <h5 class="article-date"><?= $publishDates[$i] ?></h5>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </section>
+            </section>
         </main>
 
         <footer>
