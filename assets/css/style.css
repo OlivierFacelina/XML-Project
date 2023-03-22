@@ -6,6 +6,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto';
 }
 
 body {
@@ -13,7 +14,6 @@ body {
     padding: 0;
     display: flex;
     height: 100vh;
-    font-family: 'Roboto';
     list-style-type: none;
     text-decoration: none;
 }
@@ -65,16 +65,21 @@ nav {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: #4A89A2;
-    color: #ffffff;
+    background-color: rgba(74, 137, 162, 0.9);
+    backdrop-filter: blur(2.5px);
     position: absolute;
     margin-left: 4.7vw;
     width: 20vw;
     height: 100vh;
-    font-size: 0.8em;
-    font-weight: 400;
-    display: none;
+    /* display: none; */
 }
+
+.categories h2 {
+    font-size: 1em;
+    font-weight: 200;
+    color: #ffffff;
+}
+
 .category-hr{
     height: 60vh;
     width: 2px;
@@ -135,8 +140,16 @@ main {
     max-height: 30vh;
 }
 
+.article-info {
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
 .article-img {
-    max-height: 30vh;
+    max-height: 25vh;
     margin-right: 3vw;
 }
 
@@ -150,4 +163,9 @@ main {
     font-size: 1em;
     font-weight: 300;
     text-align: justify;
+}
+
+.article-date {
+    font-size: 0.8em;
+    color: rgb(116, 116, 116);
 }

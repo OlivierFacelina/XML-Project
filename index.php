@@ -1,20 +1,9 @@
-<!-- <?php $xml = simplexml_load_file('http://www.ouest-france.fr/rss-en-continu.xml'); 
-// var_dump($xml);
-// Accéder aux éléments XML
-// $titre = $xml->channel->title;
-// // $auteur = $xml->livre->auteur;
+<?php $xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
 
-// // Récupérer les éléments sur la page 
-// echo "Le titre du livre est : $titre";
-// echo "L'auteur du livre est : $auteur";
-
-# Récupérer tous les éléments d'un item
-// foreach ($xml->channel->item as $item) {
-//     $title = $item->title;
-//     echo $title . "<br>";
-// }
-
-?>-->
+$titles = $xml->xpath('//title');
+$descriptions = $xml->xpath('//description');
+$publishDates = $xml->xpath('//pubDate');
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -42,15 +31,15 @@
             <div class="category-hr">
                 </div>
                 <div class="categories">
-                    <!-- boucle à faire en php ici -->
-                    <h2>Insolite</h2>
-                <h2>Politique</h2>
-                <h2>Sport</h2>
-                <h2>Gastronomie</h2>
-                <h2>Culture</h2>
-                <h2>Cinéma</h2>
-                <h2>Musique</h2>
-                <h2>High-tech</h2>
+                <!-- boucle à faire en php ici -->
+                    <h2 class="category-title">Insolite</h2>
+                    <h2 class="category-title">Politique</h2>
+                    <h2 class="category-title">Sport</h2>
+                    <h2 class="category-title">Gastronomie</h2>
+                    <h2 class="category-title">Culture</h2>
+                    <h2 class="category-title">Cinéma</h2>
+                    <h2 class="category-title">Musique</h2>
+                    <h2 class="category-title">High-tech</h2>
             </div>
         </nav>
     </header>
@@ -65,29 +54,20 @@
                 <hr>
 
                 <section id="articles">
-                    <div class="article">
-                        <a href=""><img src="./assets/images/211102182247-biden-asleep-cop26-vpx.jpg" alt="" class="article-img"></a>
-                        <div class="article-info">
-                            <h3 class="article-title">Le Président Biden est encore en vie !</h3>
-                            <h4 class="article-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque ullam porro aperiam amet dolorum facere sunt numquam rerum impedit exercitationem dolorem neque expedita eius eos cumque corporis quod, delectus ratione? Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias facere laudantium tempore iure necessitatibus! Eveniet corporis nesciunt doloremque deserunt reiciendis dolorem, maxime ad magnam veniam sapiente facere labore illum debitis?</h4>
+                    <?php 
+                        for ($i = 0; $i < 8; $i++) {
+                    ?>
+                        <div class="article">
+                            <a href=""><img src="./assets/images/211102182247-biden-asleep-cop26-vpx.jpg" alt="" class="article-img"></a>
+                            <div class="article-info">
+                                <div class="article-top">
+                                    <h3 class="article-title"><?= $titles[$i] ?></h3>
+                                    <h4 class="article-desc"><?= $descriptions[$i] ?></h4>
+                                </div>
+                                <h5 class="article-date"><?= $publishDates[$i] ?></h5>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="article">
-                        <a href=""><img src="./assets/images/211102182247-biden-asleep-cop26-vpx.jpg" alt="" class="article-img"></a>
-                        <div class="article-info">
-                            <h3 class="article-title">Le Président Biden est encore en vie !</h3>
-                            <h4 class="article-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque ullam porro aperiam amet dolorum facere sunt numquam rerum impedit exercitationem dolorem neque expedita eius eos cumque corporis quod, delectus ratione? Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias facere laudantium tempore iure necessitatibus! Eveniet corporis nesciunt doloremque deserunt reiciendis dolorem, maxime ad magnam veniam sapiente facere labore illum debitis?</h4>
-                        </div>
-                    </div>
-
-                    <div class="article">
-                        <a href=""><img src="./assets/images/211102182247-biden-asleep-cop26-vpx.jpg" alt="" class="article-img"></a>
-                        <div class="article-info">
-                            <h3 class="article-title">Le Président Biden est encore en vie !</h3>
-                            <h4 class="article-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque ullam porro aperiam amet dolorum facere sunt numquam rerum impedit exercitationem dolorem neque expedita eius eos cumque corporis quod, delectus ratione? Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias facere laudantium tempore iure necessitatibus! Eveniet corporis nesciunt doloremque deserunt reiciendis dolorem, maxime ad magnam veniam sapiente facere labore illum debitis?</h4>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </section>
             </section>
         </main>
