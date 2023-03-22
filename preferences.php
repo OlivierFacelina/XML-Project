@@ -1,4 +1,4 @@
-<!-- <?php $xml = simplexml_load_file('http://www.ouest-france.fr/rss-en-continu.xml'); 
+<!-- <?php $xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
 // var_dump($xml);
 // Accéder aux éléments XML
 // $titre = $xml->channel->title;
@@ -25,10 +25,6 @@
     <title>Agregateur</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/mediaqueries/mediaqueries.css">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
 </head>
 <body>
     <header>
@@ -37,7 +33,7 @@
             <div class="nav-section">
                 <a href="" class="nav-item"><img src="./assets/images/searchnormal.png" alt="Rechercher" class="nav-icon"></a>
                 <a href="" class="nav-item" id="moon"><img src="./assets/images/moon.png" alt="Mode" class="nav-icon" id="moon-icon"></a>
-                <a href="" class="nav-item" id="heart"><img src="./assets/images/heart.png" alt="Rechercher" class="nav-icon"></a>
+                <a href="" class="nav-item"><img src="./assets/images/heart.png" alt="Rechercher" class="nav-icon"></a>
                 <a href="" class="nav-item"><img src="./assets/images/infocircle.png" alt="Rechercher" class="nav-icon"></a>
             </div>
         </nav>
@@ -46,15 +42,16 @@
             <div class="category-hr">
                 </div>
                 <div class="categories">
-                    <h2 id="insolite">Insolite <i class="fa-regular fa-heart"></i></h2>
-                    <h2 id="politique">Politique <i class="fa-regular fa-heart"></i></h2>
-                    <h2 id="sport">Sport <i class="fa-regular fa-heart"></i></h2>
-                    <h2 id="gastronomie">Gastronomie <i class="fa-regular fa-heart"></i></h2>
-                    <h2 id="culture">Culture <i class="fa-regular fa-heart"></i></h2>
-                    <h2 id="cinema">Cinéma <i class="fa-regular fa-heart"></i></h2>
-                    <h2 id="musique">Musique <i class="fa-regular fa-heart"></i></h2>
-                    <h2 id="high-tech">High-tech <i class="fa-regular fa-heart"></i></h2>
-                </div>
+                    <!-- boucle à faire en php ici -->
+                    <h2>Insolite</h2>
+                <h2>Politique</h2>
+                <h2>Sport</h2>
+                <h2>Gastronomie</h2>
+                <h2>Culture</h2>
+                <h2>Cinéma</h2>
+                <h2>Musique</h2>
+                <h2>High-tech</h2>
+            </div>
         </nav>
     </header>
 
@@ -66,9 +63,5 @@
         </footer>
     </section>
     <script src="assets/js/script.js"></script>
-    <script
-      src="https://kit.fontawesome.com/231b981596.js"
-      crossorigin="anonymous"
-    ></script>
 </body>
 </html>
