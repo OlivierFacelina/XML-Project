@@ -39,7 +39,7 @@ $imgUrl = $xml->xpath('//enclosure/@url');
             <div class="category-hr">
                 <div class="categories">
                     <?php for ($i = 0; $i < count($categories); $i++) { ?>
-                        <h2><?= $categories[$i] ?></h2>
+                        <h2><?= $categories[$i] ?><span><i class="fa-regular fa-heart"></i></span></h2>
                     <?php } ?>
                 </div>
             </div>
