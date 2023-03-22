@@ -1,8 +1,12 @@
-<?php $xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
+<?php
+$categories = ['Insolite','Politique','Sport','Gastronomie','Culture','Cinéma','Musique','High-tech'];
+$xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
 
 $titles = $xml->xpath('//title');
 $descriptions = $xml->xpath('//description');
 $publishDates = $xml->xpath('//pubDate');
+$links = $xml->xpath('//link');
+$imgUrl = $xml->xpath('//enclosure/@url');
 ?>
 
 <!DOCTYPE html>
@@ -29,17 +33,11 @@ $publishDates = $xml->xpath('//pubDate');
 
         <nav class="category-nav">
             <div class="category-hr">
-                </div>
                 <div class="categories">
-                <!-- boucle à faire en php ici -->
-                    <h2 class="category-title">Insolite</h2>
-                    <h2 class="category-title">Politique</h2>
-                    <h2 class="category-title">Sport</h2>
-                    <h2 class="category-title">Gastronomie</h2>
-                    <h2 class="category-title">Culture</h2>
-                    <h2 class="category-title">Cinéma</h2>
-                    <h2 class="category-title">Musique</h2>
-                    <h2 class="category-title">High-tech</h2>
+                    <?php for ($i = 0; $i < count($categories); $i++) { ?>
+                        <h2><?= $categories[$i] ?></h2>
+                    <?php } ?>
+                </div>
             </div>
         </nav>
     </header>
@@ -55,14 +53,14 @@ $publishDates = $xml->xpath('//pubDate');
 
                 <section id="articles">
                     <?php 
-                        for ($i = 0; $i < 8; $i++) {
+                        for ($i = 2; $i < 10; $i++) {
                     ?>
                         <div class="article">
-                            <a href=""><img src="./assets/images/211102182247-biden-asleep-cop26-vpx.jpg" alt="" class="article-img"></a>
+                            <a href="<?= $links[$i] ?>, " target="blank"><img src="<?= $imgUrl[$i - 2] ?>" alt="" class="article-img"></a>
                             <div class="article-info">
                                 <div class="article-top">
                                     <h3 class="article-title"><?= $titles[$i] ?></h3>
-                                    <h4 class="article-desc"><?= $descriptions[$i] ?></h4>
+                                    <h4 class="article-desc"><?= $descriptions[$i - 1] ?></h4>
                                 </div>
                                 <h5 class="article-date"><?= $publishDates[$i] ?></h5>
                             </div>
