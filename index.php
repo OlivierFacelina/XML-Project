@@ -28,8 +28,8 @@
 </head>
 <body>
     <header>
-    <a id="logo" href=""><img src="./assets/images/logo.png" alt="FluXML Logo" class="logo"></a>
         <nav class="web-nav">
+            <a id="logo" href=""><img src="./assets/images/logo.png" alt="FluXML Logo" class="logo"></a>
             <div class="nav-section">
                 <a href="" class="nav-item"><img src="./assets/images/searchnormal.png" alt="Rechercher" class="nav-icon"></a>
                 <a href="" class="nav-item" id="moon"><img src="./assets/images/moon.png" alt="Mode" class="nav-icon" id="moon-icon"></a>
@@ -57,6 +57,39 @@
 
     <section class="web-container">
         <main>
+            <section class="container">
+                <div class="category-upper">
+                    <h2 class="category-title">Insolite</h2>
+                    <a href=""><img src="./assets/images/heart.png" alt="" class="add-favourite"></a>
+                </div>
+                <hr>
+
+                <section id="articles">
+                    <div class="article">
+                        <a href=""><img src="./assets/images/211102182247-biden-asleep-cop26-vpx.jpg" alt="" class="article-img"></a>
+                        <div class="article-info">
+                            <h3 class="article-title">Le Président Biden est encore en vie !</h3>
+                            <h4 class="article-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque ullam porro aperiam amet dolorum facere sunt numquam rerum impedit exercitationem dolorem neque expedita eius eos cumque corporis quod, delectus ratione? Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias facere laudantium tempore iure necessitatibus! Eveniet corporis nesciunt doloremque deserunt reiciendis dolorem, maxime ad magnam veniam sapiente facere labore illum debitis?</h4>
+                        </div>
+                    </div>
+
+                    <div class="article">
+                        <a href=""><img src="./assets/images/211102182247-biden-asleep-cop26-vpx.jpg" alt="" class="article-img"></a>
+                        <div class="article-info">
+                            <h3 class="article-title">Le Président Biden est encore en vie !</h3>
+                            <h4 class="article-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque ullam porro aperiam amet dolorum facere sunt numquam rerum impedit exercitationem dolorem neque expedita eius eos cumque corporis quod, delectus ratione? Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias facere laudantium tempore iure necessitatibus! Eveniet corporis nesciunt doloremque deserunt reiciendis dolorem, maxime ad magnam veniam sapiente facere labore illum debitis?</h4>
+                        </div>
+                    </div>
+
+                    <div class="article">
+                        <a href=""><img src="./assets/images/211102182247-biden-asleep-cop26-vpx.jpg" alt="" class="article-img"></a>
+                        <div class="article-info">
+                            <h3 class="article-title">Le Président Biden est encore en vie !</h3>
+                            <h4 class="article-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque ullam porro aperiam amet dolorum facere sunt numquam rerum impedit exercitationem dolorem neque expedita eius eos cumque corporis quod, delectus ratione? Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias facere laudantium tempore iure necessitatibus! Eveniet corporis nesciunt doloremque deserunt reiciendis dolorem, maxime ad magnam veniam sapiente facere labore illum debitis?</h4>
+                        </div>
+                    </div>
+                </section>
+            </section>
         </main>
 
         <footer>
