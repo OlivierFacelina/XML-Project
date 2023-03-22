@@ -59,15 +59,37 @@ moonIcon.addEventListener('click', (event) => {
 
 // Pour ajouter aux favoris, quand tu cliques sur le coeur ça l'ajoute aux favoris
 const favorites = document.querySelectorAll('.fa-heart');
-console.log(favorites)
-table = []
+const h2Elements = document.querySelectorAll('h2');
+const h2Values = [];
+const lien = document.getElementById('heart')
+
+h2Elements.forEach(element => {
+  element.addEventListener('click', () => {
+    h2Values.push(element.textContent);
+    console.log(h2Values);
+  });
+});
 
 favorites.forEach(element => { 
   element.addEventListener('click', () => {
-    table.push(element.parentNode)
-    console.log(table)
     // Enregistrement local storage 
-    // localStorage.setItem('favorites',JSON.stringify(table))
-    // table.push(favorites)
+    localStorage.setItem('favorites',JSON.stringify(h2Values));
   })
 });
+
+lien.addEventListener('click', (event) => {
+  event.preventDefault();
+  const favorites_link = JSON.parse(localStorage.getItem('favorites'));
+  console.log(favorites_link);
+  const favorites = JSON.parse(localStorage.getItem('favorites'));
+  const results = document.querySelector('body');
+  results.innerHTML = ''; // effacer les éléments actuels
+  favorites.forEach(value => {
+    const h2Element = document.createElement('h2');
+    const h2Text = document.createTextNode(value);
+    h2Element.appendChild(h2Text);
+    results.appendChild(h2Element); // ajouter l'élément h2 à l'élément parent "results"
+  });
+})
+
+

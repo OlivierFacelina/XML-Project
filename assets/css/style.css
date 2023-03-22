@@ -71,7 +71,7 @@ nav {
     margin-left: 4.7vw;
     width: 20vw;
     height: 100vh;
-    display: none;
+    /* display: none; */
 }
 
 .categories h2 {
