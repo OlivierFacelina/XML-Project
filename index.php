@@ -18,6 +18,10 @@ $imgUrl = $xml->xpath('//enclosure/@url');
     <title>Agregateur</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/mediaqueries/mediaqueries.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 </head>
 <body>
     <header>
@@ -26,7 +30,7 @@ $imgUrl = $xml->xpath('//enclosure/@url');
             <div class="nav-section">
                 <a href="" class="nav-item"><img src="./assets/images/searchnormal.png" alt="Rechercher" class="nav-icon"></a>
                 <a href="" class="nav-item" id="moon"><img src="./assets/images/moon.png" alt="Mode" class="nav-icon" id="moon-icon"></a>
-                <a href="" class="nav-item"><img src="./assets/images/heart.png" alt="Rechercher" class="nav-icon"></a>
+                <a href="" class="nav-item" id="heart"><img src="./assets/images/heart.png" alt="Rechercher" class="nav-icon"></a>
                 <a href="" class="nav-item"><img src="./assets/images/infocircle.png" alt="Rechercher" class="nav-icon"></a>
             </div>
         </nav>
@@ -74,5 +78,9 @@ $imgUrl = $xml->xpath('//enclosure/@url');
         </footer>
     </section>
     <script src="assets/js/script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/231b981596.js"
+      crossorigin="anonymous"
+    ></script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+// ------------------------------- MODE SOMBRE ------------------------------ //
+
 const moonIcon = document.getElementById('moon-icon');
 const navbar = document.getElementById('web-nav');
 // console.log(moonIcon)
@@ -35,4 +37,21 @@ moonIcon.addEventListener('click', (event) => {
   // mettre à jour la valeur de isDarkMode dans le localStorage
   isDarkMode = !isDarkMode;
   localStorage.setItem('isDarkMode', isDarkMode);
+});
+
+// ------------------------------- FAVORIS ------------------------------ //
+
+// Pour ajouter aux favoris, quand tu cliques sur le coeur ça l'ajoute aux favoris
+const favorites = document.querySelectorAll('.fa-heart');
+console.log(favorites)
+table = []
+
+favorites.forEach(element => { 
+  element.addEventListener('click', () => {
+    table.push(element.parentNode)
+    console.log(table)
+    // Enregistrement local storage 
+    // localStorage.setItem('favorites',JSON.stringify(table))
+    // table.push(favorites)
+  })
 });
