@@ -1,6 +1,25 @@
 <?php
 $categories = ['Insolite','Politique','Sport','Gastronomie','Culture','Cinéma','Musique','High-tech'];
-$xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
+
+// Switch case si l'utilisateur a choisi ce cookie alors on lui met ce flux
+if(isset($_COOKIE['favorites'])){
+    $valeurCookie = json_decode($_COOKIE['favorites'], true);
+    switch($valeurCookie[0]){
+        case 'Insolite':
+            $xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
+            break;
+        case 'Sport':
+            echo 'Tu as choisi le thème : Sport';
+            break;
+        case 'Musique':
+            echo 'Tu as choisi le thème : Musique';
+            break;
+        default:
+            echo 'Tu as choisi un autre thème';
+    }
+}
+
+// $xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
 
 $titles = $xml->xpath('//title');
 $descriptions = $xml->xpath('//description');
@@ -36,7 +55,6 @@ $imgUrl = $xml->xpath('//enclosure/@url');
 
         <nav class="category-nav" id="menu-deroulant">
             <div class="category-hr">
-
             </div>
                 <div class="categories" id="mask">
                     <?php for ($i = 0; $i < count($categories); $i++) { ?>
