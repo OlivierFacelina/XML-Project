@@ -103,4 +103,16 @@ results.appendChild(parentDiv); // Ajouter l'élément div parent à l'élément
 
 })
 
+// ____________________________________________________________________________________________________________________
+//                                         ANIM NAV
 
+const animrubrique = document.getElementById("animrubrique");
+let isWhite = true;
+const menu_deroulant = document.getElementById("menu-deroulant");
+const mask = document.getElementById("mask")
+
+animrubrique.addEventListener('click', event => {
+    menu_deroulant.style.width = menu_deroulant.offsetWidth > 15 ? "0vw" : "20vw";
+    mask.style.display = mask.offsetWidth > 15 ? "none" : "flex"
+});
+// ____________________________________________________________________________________________________________________

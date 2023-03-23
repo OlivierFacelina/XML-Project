@@ -72,6 +72,8 @@ nav {
     width: 20vw;
     height: 100vh;
     /* display: none; */
+
+    transition: 0.3s;
 }
 
 .categories h2 {
