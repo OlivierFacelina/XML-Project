@@ -113,5 +113,6 @@ const mask = document.getElementById("mask")
 animrubrique.addEventListener('click', event => {
     menu_deroulant.style.width = menu_deroulant.offsetWidth > 15 ? "0vw" : "20vw";
     mask.style.display = mask.offsetWidth > 15 ? "none" : "flex"
+    menu_deroulant.style.backdropFilter = menu_deroulant.offsetWidth > 15 ? "none" : "blur(2.5px)"
 });
 // ____________________________________________________________________________________________________________________
