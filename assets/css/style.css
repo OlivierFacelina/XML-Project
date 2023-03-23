@@ -21,6 +21,7 @@ body {
 header {
     display: flex;
     position: fixed;
+    z-index: 10;
 }
 
 nav {
@@ -71,7 +72,7 @@ nav {
     margin-left: 4.7vw;
     width: 20vw;
     height: 100vh;
-    display: none;
+    /* display: none; */
 
     transition: 0.3s;
 }
@@ -111,7 +112,8 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 4.7vw
+    margin-left: 4.7vw;
+    z-index: 9;
 }
 
 .container {
@@ -125,7 +127,7 @@ main {
 }
 
 .search-section a {
-    z-index: 99;
+    z-index: 8;
     position: absolute;
     padding-left: 0.8vw;
     padding-top: 0.5vh;
@@ -143,7 +145,7 @@ main {
     border: 1px solid #e1e1e1;
     border-radius: 5px;
     padding-left: 3vw;
-    z-index: 98;
+    z-index: 7;
 }
 
 .category-upper {
