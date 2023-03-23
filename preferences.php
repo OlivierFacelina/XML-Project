@@ -1,20 +1,7 @@
-<!-- <?php $xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
-// var_dump($xml);
-// Accéder aux éléments XML
-// $titre = $xml->channel->title;
-// // $auteur = $xml->livre->auteur;
-
-// // Récupérer les éléments sur la page 
-// echo "Le titre du livre est : $titre";
-// echo "L'auteur du livre est : $auteur";
-
-# Récupérer tous les éléments d'un item
-// foreach ($xml->channel->item as $item) {
-//     $title = $item->title;
-//     echo $title . "<br>";
-// }
-
-?>-->
+<?php
+$categories = ['Insolite','Politique','Sport','Gastronomie','Culture','Cinéma','Musique','High-tech'];
+$xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -29,7 +16,7 @@
 <body>
 <header>
         <nav class="web-nav" id="web-nav">
-            <a id="logo" href=""><img src="./assets/images/logo.png" alt="FluXML Logo" class="logo"></a>
+            <a id="logo" href="./index.php"><img src="./assets/images/logo.png" alt="FluXML Logo" class="logo"></a>
             <div class="nav-section">
                 <a href="" class="nav-item"><img src="./assets/images/searchnormal.png" alt="Rechercher" class="nav-icon" id="search-icon"></a>
                 <a href="" class="nav-item" id="moon"><img src="./assets/images/moon.png" alt="Mode" class="nav-icon" id="moon-icon"></a>
