@@ -82,9 +82,11 @@ lien.addEventListener('click', (event) => {
   const favorites_link = JSON.parse(localStorage.getItem('favorites'));
   console.log(favorites_link);
   const favorites = JSON.parse(localStorage.getItem('favorites'));
-  const results = document.querySelector('body');
-  results.innerHTML = ''; // effacer les éléments actuels
+
+  const results = window.open('preferences.php', '_blank').document.body;
   const parentDiv = document.createElement('div'); // Créer un élément div parent
+  const body = document.querySelector('body');
+  body.appendChild(parentDiv);
 favorites.forEach(value => {
     const titleDiv = document.createElement('div'); // Créer un élément div pour chaque titre
     const h2Element = document.createElement('h2'); // Créer un élément h2 pour le titre
@@ -103,4 +105,16 @@ results.appendChild(parentDiv); // Ajouter l'élément div parent à l'élément
 
 })
 
+// ____________________________________________________________________________________________________________________
+//                                         ANIM NAV
 
+const animrubrique = document.getElementById("animrubrique");
+let isWhite = true;
+const menu_deroulant = document.getElementById("menu-deroulant");
+const mask = document.getElementById("mask")
+
+animrubrique.addEventListener('click', event => {
+    menu_deroulant.style.width = menu_deroulant.offsetWidth > 15 ? "0vw" : "20vw";
+    mask.style.display = mask.offsetWidth > 15 ? "none" : "flex"
+});
+// ____________________________________________________________________________________________________________________

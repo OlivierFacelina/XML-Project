@@ -31,16 +31,19 @@ $imgUrl = $xml->xpath('//enclosure/@url');
                 <a href="" class="nav-item"><img src="./assets/images/searchnormal.png" alt="Rechercher" class="nav-icon" id="search-icon"></a>
                 <a href="" class="nav-item" id="moon"><img src="./assets/images/moon.png" alt="Mode" class="nav-icon" id="moon-icon"></a>
                 <a href="" class="nav-item" id="heart"><img src="./assets/images/heart.png" alt="Rechercher" class="nav-icon" id="heart-emoji"></a>
-                <a href="" class="nav-item"><img src="./assets/images/infocircle.png" alt="Rechercher" class="nav-icon" id="infocircle-icon"></a>
+                <a class="nav-item" id="animrubrique"><img src="./assets/images/infocircle.png" alt="Rechercher" class="nav-icon" id="infocircle-icon"></a>
             </div>
         </nav>
 
-        <nav class="category-nav">
+        <nav class="category-nav" id="menu-deroulant">
             <div class="category-hr">
             </div>
                 <div class="categories">
                     <?php for ($i = 0; $i < count($categories); $i++) { ?>
-                        <h2><?= $categories[$i] ?><i class="fa-regular fa-heart"></i></h2>
+                        <div class="title-like">
+                        <h2><?= $categories[$i] ?></h2>
+                        <i class="fa-regular fa-heart"></i>
+                        </div>
                     <?php } ?>
                 </div>
         </nav>
@@ -48,7 +51,8 @@ $imgUrl = $xml->xpath('//enclosure/@url');
 
     <section class="web-container">
         <main>
-            <section class="container">
+            <section class="container" id="anim">
+
                 <div class="category-upper">
                     <h2 class="category-title">Insolite</h2>
                     <a href=""><img src="./assets/images/heart.png" alt="" class="add-favourite" id="heart-category"></a>
