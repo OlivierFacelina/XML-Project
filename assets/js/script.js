@@ -72,8 +72,8 @@ h2Elements.forEach(element => {
 
 favorites.forEach(element => { 
   element.addEventListener('click', () => {
-    // Enregistrement local storage 
-    localStorage.setItem('favorites',JSON.stringify(h2Values));
+    // Enregistrement cookies 
+    document.cookie = `favorites=${JSON.stringify(h2Values)};expires=Thu, 01 Jan 2099 00:00:00 UTC;path=/`;
   })
 });
 
