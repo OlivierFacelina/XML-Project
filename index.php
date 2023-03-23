@@ -63,6 +63,10 @@ $imgUrl = $xml->xpath('//enclosure/@url');
     <section class="web-container">
         <main>
             <section class="container" id="anim">
+                <div class="search-section">
+                    <a href="" class=""><img src="./assets/images/searchnormal.png" alt="Rechercher" id="search-icon" class="search-icon"></a>
+                    <input type="text" placeholder="Rechercher..." class="search-input">
+                </div>
 
                 <div class="category-upper">
                     <h2 class="category-title">Insolite</h2>
