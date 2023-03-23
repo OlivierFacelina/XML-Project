@@ -104,6 +104,10 @@ nav {
     color: #ffffff;
 }
 
+.fa-heart:before {
+    color: white;
+}
+
 
 /* Main */
 
