@@ -38,7 +38,7 @@ $imgUrl = $xml->xpath('//enclosure/@url');
         <nav class="category-nav" id="menu-deroulant">
             <div class="category-hr">
             </div>
-                <div class="categories">
+                <div class="categories" id="mask">
                     <?php for ($i = 0; $i < count($categories); $i++) { ?>
                         <div class="title-like">
                         <h2><?= $categories[$i] ?></h2>
