@@ -27,31 +27,29 @@
     <link rel="stylesheet" href="./assets/mediaqueries/mediaqueries.css">
 </head>
 <body>
-    <header>
-    <a id="logo" href=""><img src="./assets/images/logo.png" alt="FluXML Logo" class="logo"></a>
+<header>
         <nav class="web-nav" id="web-nav">
+            <a id="logo" href=""><img src="./assets/images/logo.png" alt="FluXML Logo" class="logo"></a>
             <div class="nav-section">
-                <a href="" class="nav-item"><img src="./assets/images/searchnormal.png" alt="Rechercher" class="nav-icon"></a>
+                <a href="" class="nav-item"><img src="./assets/images/searchnormal.png" alt="Rechercher" class="nav-icon" id="search-icon"></a>
                 <a href="" class="nav-item" id="moon"><img src="./assets/images/moon.png" alt="Mode" class="nav-icon" id="moon-icon"></a>
-                <a href="" class="nav-item"><img src="./assets/images/heart.png" alt="Rechercher" class="nav-icon"></a>
-                <a href="" class="nav-item"><img src="./assets/images/infocircle.png" alt="Rechercher" class="nav-icon"></a>
+                <a href="" class="nav-item" id="heart"><img src="./assets/images/heart.png" alt="Rechercher" class="nav-icon" id="heart-emoji"></a>
+                <a class="nav-item" id="animrubrique"><img src="./assets/images/infocircle.png" alt="Rechercher" class="nav-icon" id="infocircle-icon"></a>
             </div>
         </nav>
 
-        <nav class="category-nav">
+        <nav class="category-nav" id="menu-deroulant">
             <div class="category-hr">
-                </div>
-                <div class="categories">
-                    <!-- boucle à faire en php ici -->
-                    <h2>Insolite</h2>
-                <h2>Politique</h2>
-                <h2>Sport</h2>
-                <h2>Gastronomie</h2>
-                <h2>Culture</h2>
-                <h2>Cinéma</h2>
-                <h2>Musique</h2>
-                <h2>High-tech</h2>
+
             </div>
+                <div class="categories" id="mask">
+                    <?php for ($i = 0; $i < count($categories); $i++) { ?>
+                        <div class="title-like">
+                        <h2><?= $categories[$i] ?></h2>
+                        <i class="fa-regular fa-heart"></i>
+                        </div>
+                    <?php } ?>
+                </div>
         </nav>
     </header>
 

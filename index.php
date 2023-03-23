@@ -24,25 +24,29 @@ $imgUrl = $xml->xpath('//enclosure/@url');
     />
 </head>
 <body>
-    <header>
+<header>
         <nav class="web-nav" id="web-nav">
             <a id="logo" href=""><img src="./assets/images/logo.png" alt="FluXML Logo" class="logo"></a>
             <div class="nav-section">
                 <a href="" class="nav-item"><img src="./assets/images/searchnormal.png" alt="Rechercher" class="nav-icon" id="search-icon"></a>
                 <a href="" class="nav-item" id="moon"><img src="./assets/images/moon.png" alt="Mode" class="nav-icon" id="moon-icon"></a>
                 <a href="" class="nav-item" id="heart"><img src="./assets/images/heart.png" alt="Rechercher" class="nav-icon" id="heart-emoji"></a>
-                <a href="" class="nav-item"><img src="./assets/images/infocircle.png" alt="Rechercher" class="nav-icon" id="infocircle-icon"></a>
+                <a class="nav-item" id="animrubrique"><img src="./assets/images/infocircle.png" alt="Rechercher" class="nav-icon" id="infocircle-icon"></a>
             </div>
         </nav>
 
-        <nav class="category-nav">
+        <nav class="category-nav" id="menu-deroulant">
             <div class="category-hr">
-                <div class="categories">
+
+            </div>
+                <div class="categories" id="mask">
                     <?php for ($i = 0; $i < count($categories); $i++) { ?>
-                        <h2><?= $categories[$i] ?><i class="fa-regular fa-heart"></i></h2>
+                        <div class="title-like">
+                        <h2><?= $categories[$i] ?></h2>
+                        <i class="fa-regular fa-heart"></i>
+                        </div>
                     <?php } ?>
                 </div>
-            </div>
         </nav>
     </header>
 
