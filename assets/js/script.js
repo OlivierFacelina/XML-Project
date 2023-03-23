@@ -59,16 +59,16 @@ moonIcon.addEventListener('click', (event) => {
 
 // Pour ajouter aux favoris, quand tu cliques sur le coeur ça l'ajoute aux favoris
 const favorites = document.querySelectorAll('.fa-heart');
-const h2Elements = document.querySelectorAll('h2');
-const h2Values = [];
-const lien = document.getElementById('heart')
+const h2 = document.querySelectorAll('h2');
+const values = [];
+const link = document.getElementById('heart')
 
 favorites.forEach(element => { 
   element.addEventListener('click', () => {
-    h2Values.push(element.id);
+    values.push(element.id);
     // Enregistrement cookies
     // console.log(element.id)
-    document.cookie = `favorites=${JSON.stringify(h2Values)};expires=Thu, 01 Jan 2099 00:00:00 UTC;path=/`;
+    document.cookie = `favorites=${JSON.stringify(values)};expires=Thu, 01 Jan 2099 00:00:00 UTC;path=/`;
   })
 });
 
@@ -86,3 +86,54 @@ animrubrique.addEventListener('click', event => {
     menu_deroulant.style.backdropFilter = menu_deroulant.offsetWidth > 15 ? "none" : "blur(2.5px)"
 });
 // ____________________________________________________________________________________________________________________
+//                                         SEARCHBAR
+
+const categories = ['Insolite','Politique','Sport','Gastronomie','Culture','Cinéma','Musique','High-tech'];
+const searchForm = document.getElementById('search-form');
+const searchInput = document.getElementById('search-input');
+const categorySelect = document.getElementById('category');
+
+// Flux correspondant à chaque catégorie
+const feeds = {
+  'Insolite': 'http://www.lepoint.fr/insolite/rss.xml',
+  'Politique': 'http://www.lepoint.fr/politique/rss.xml',
+  'Sport': 'http://www.lepoint.fr/sport/rss.xml',
+  'Gastronomie': 'http://www.lepoint.fr/gastronomie/rss.xml',
+  'Culture': 'http://www.lepoint.fr/culture/rss.xml',
+  'Cinéma': 'http://www.lepoint.fr/cinema/rss.xml',
+  'Musique': 'http://www.lepoint.fr/musique/rss.xml',
+  'High-tech': 'http://www.lepoint.fr/high-tech-internet/planete-appli/rss.xml'
+};
+
+function searchCategories() {
+  // On va récup la valeur de l'input de recherche et la catégorie sélectionnée
+  const searchString = searchInput.value.toLowerCase();
+  const category = categorySelect.value;
+
+  // On filtre les catégories qui correspondent à la recherche
+  let filteredCategories;
+  if (category === '') {
+    // Si y a rien, filtrer toutes les catégories
+    filteredCategories = categories.filter((category) => {
+      return category.toLowerCase().includes(searchString);
+    });
+  } else {
+    // Si une catégorie est sélectionnée, filtrer uniquement cette catégorie
+    filteredCategories = [category];
+  }
+
+  // On obtient les flux correspondant aux catégories filtrées
+  const filteredFeeds = filteredCategories.map((category) => {
+    return feeds[category];
+  });
+
+  // On redirige l'utilisateur vers les flux correspondants
+  window.location.href = filteredFeeds.join(',');
+}
+
+// Quand on valide, ça envoie les données et ça appelle la fonction définie plus haut
+searchForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  searchCategories();
+});
+

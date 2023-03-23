@@ -76,10 +76,24 @@ $imgUrl = $xml->xpath('//enclosure/@url');
     <section class="web-container">
         <main>
             <section class="container" id="anim">
-                <div class="search-section">
-                    <a href="" class=""><img src="./assets/images/searchnormal.png" alt="Rechercher" id="search-icon" class="search-icon"></a>
-                    <input type="text" placeholder="Rechercher..." class="search-input">
-                </div>
+                <form id="search-form">
+                    <div class="search-section">
+                        <a href="" class=""><img src="./assets/images/searchnormal.png" alt="Rechercher" id="search-icon" class="search-icon"></a>
+                        <input type="text" placeholder="Rechercher..." class="search-input" id="search-input">
+                        <ul id="search-results"></ul>
+                        <select name="category" id="category">
+                            <option value="">Toutes les catégories</option>
+                            <option value="Insolite">Insolite</option>
+                            <option value="Politique">Politique</option>
+                            <option value="Sport">Sport</option>
+                            <option value="Gastronomie">Gastronomie</option>
+                            <option value="Culture">Culture</option>
+                            <option value="Cinéma">Cinéma</option>
+                            <option value="Musique">Musique</option>
+                            <option value="High-tech">High-tech</option>
+                        </select>
+                    </div>
+                </form>
 
                 <div class="category-upper">
                     <h2 class="category-title">Insolite</h2>
