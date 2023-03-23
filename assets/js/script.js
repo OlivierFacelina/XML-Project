@@ -84,12 +84,23 @@ lien.addEventListener('click', (event) => {
   const favorites = JSON.parse(localStorage.getItem('favorites'));
   const results = document.querySelector('body');
   results.innerHTML = ''; // effacer les éléments actuels
-  favorites.forEach(value => {
-    const h2Element = document.createElement('h2');
-    const h2Text = document.createTextNode(value);
-    h2Element.appendChild(h2Text);
-    results.appendChild(h2Element); // ajouter l'élément h2 à l'élément parent "results"
-  });
+  const parentDiv = document.createElement('div'); // Créer un élément div parent
+favorites.forEach(value => {
+    const titleDiv = document.createElement('div'); // Créer un élément div pour chaque titre
+    const h2Element = document.createElement('h2'); // Créer un élément h2 pour le titre
+    const h2Text = document.createTextNode(value); // Créer un noeud de texte avec la valeur du titre
+    h2Element.appendChild(h2Text); // Ajouter le texte au titre h2
+    const description = "Description du titre " + value; // Créer une description pour chaque titre
+    const descriptionParagraph = document.createElement('p'); // Créer un élément p pour la description
+    const descriptionText = document.createTextNode(description); // Créer un noeud de texte avec la description
+    descriptionParagraph.appendChild(descriptionText); // Ajouter le texte à l'élément p
+    titleDiv.appendChild(h2Element); // Ajouter le titre h2 à l'élément div du titre
+    titleDiv.appendChild(descriptionParagraph); // Ajouter la description à l'élément div du titre
+    parentDiv.appendChild(titleDiv); // Ajouter l'élément div du titre à l'élément div parent
+});
+
+results.appendChild(parentDiv); // Ajouter l'élément div parent à l'élément parent "results"
+
 })
 
 
