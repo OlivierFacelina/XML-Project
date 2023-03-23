@@ -5,13 +5,26 @@ $categories = ['Insolite','Politique','Sport','Gastronomie','Culture','Cinéma',
 if(isset($_COOKIE['favorites'])){
     $valeurCookie = json_decode($_COOKIE['favorites'], true);
     if (in_array('Insolite', $valeurCookie)) {
-        echo 'Tu as choisi le thème : Insolite';
-    } else {
-        echo 'Tu as choisi un autre thème';
-    }
+        // echo 'Tu as choisi le thème : Insolite';
+        $xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
+    } elseif (in_array('Politique',$valeurCookie)) {
+        $xml = simplexml_load_file('http://www.lepoint.fr/politique/rss.xml'); 
+    } elseif (in_array('Sport',$valeurCookie)) {
+        $xml = simplexml_load_file('http://www.lepoint.fr/sport/rss.xml');
+    } elseif (in_array('Gastronomie',$valeurCookie)) {
+        $xml = simplexml_load_file('http://www.lepoint.fr/gastronomie/rss.xml');
+    } elseif (in_array('Culture',$valeurCookie)) {
+        $xml = simplexml_load_file('http://www.lepoint.fr/culture/rss.xml');
+    } elseif (in_array('Cinéma',$valeurCookie)) {
+        $xml = simplexml_load_file('http://www.lepoint.fr/cinema/rss.xml');
+    } elseif (in_array('Musique',$valeurCookie)) {
+        $xml = simplexml_load_file('http://www.lepoint.fr/musique/rss.xml');
+    } elseif (in_array('High-tech',$valeurCookie)) {
+        $xml = simplexml_load_file('http://www.lepoint.fr/high-tech-internet/planete-appli/rss.xml');
+    } 
 }
 
-$xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
+// $xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
 
 $titles = $xml->xpath('//title');
 $descriptions = $xml->xpath('//description');
@@ -41,7 +54,7 @@ $imgUrl = $xml->xpath('//enclosure/@url');
             <div class="nav-section">
                 <a href="" class="nav-item"><img src="./assets/images/searchnormal.png" alt="Rechercher" class="nav-icon" id="search-icon"></a>
                 <a href="" class="nav-item" id="moon"><img src="./assets/images/moon.png" alt="Mode" class="nav-icon" id="moon-icon"></a>
-                <a href="" class="nav-item" id="heart"><img src="./assets/images/heart.png" alt="Rechercher" class="nav-icon" id="heart-emoji"></a>
+                <a href="preferences.php" class="nav-item" id="heart"><img src="./assets/images/heart.png" alt="Rechercher" class="nav-icon" id="heart-emoji"></a>
                 <a class="nav-item" id="animrubrique"><img src="./assets/images/infocircle.png" alt="Rechercher" class="nav-icon" id="infocircle-icon"></a>
             </div>
         </nav>

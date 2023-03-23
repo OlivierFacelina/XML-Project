@@ -1,20 +1,55 @@
-<!-- <?php $xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
-// var_dump($xml);
-// Accéder aux éléments XML
-// $titre = $xml->channel->title;
-// // $auteur = $xml->livre->auteur;
+<?php 
+// Récupérer les valeurs stockées dans les cookies
+if(isset($_COOKIE['favorites'])){
+    $valeurCookie = json_decode($_COOKIE['favorites'], true);
 
-// // Récupérer les éléments sur la page 
-// echo "Le titre du livre est : $titre";
-// echo "L'auteur du livre est : $auteur";
+    // Tableau associatif qui lie les thèmes aux URLs des flux RSS
+    $urls = array(
+        'Insolite' => 'https://www.lepoint.fr/insolite/rss.xml',
+        'Politique' => 'http://www.lepoint.fr/politique/rss.xml',
+        'Sport' => 'http://www.lepoint.fr/sport/rss.xml',
+        'Gastronomie' => 'http://www.lepoint.fr/gastronomie/rss.xml',
+        'Culture' => 'http://www.lepoint.fr/culture/rss.xml',
+        'Cinéma' => 'http://www.lepoint.fr/cinema/rss.xml',
+        'Musique' => 'http://www.lepoint.fr/musique/rss.xml',
+        'High-tech' => 'http://www.lepoint.fr/high-tech-internet/planete-appli/rss.xml'
+    );
 
-# Récupérer tous les éléments d'un item
-// foreach ($xml->channel->item as $item) {
-//     $title = $item->title;
-//     echo $title . "<br>";
-// }
+    // Afficher les flux RSS en fonction de chaque valeur stockée dans les cookies
+    $articles = array();
+    if (is_array($valeurCookie)) {
+        foreach($valeurCookie as $theme) {
+            if(array_key_exists($theme, $urls)) {
+                $xml = simplexml_load_file($urls[$theme]);
+                foreach($xml->channel->item as $item) {
+                    $title = (string) $item->title;
+                    $description = (string) $item->description;
+                    $image = '';
+                    $pubDate = '';
+                    if(isset($item->enclosure)) {
+                        $image = (string) $item->enclosure['url'];
+                    } elseif(isset($item->image)) {
+                        $image = (string) $item->image->url;
+                    }
+                    if(isset($item->pubDate)) {
+                        $pubDate = (string) $item->pubDate;
+                    }
+                    $articles[] = array('title' => $title, 'description' => $description, 'image' => $image, 'pubDate' => $pubDate);
+                }
+            }
+        }
+    }
 
-?>-->
+
+    // Afficher les titres et les descriptions des articles
+    foreach($articles as $article) {
+        echo '<div class="image"><img src="'.$article['image'].'">
+            <div class="text"><h2>'.$article['title'].'</h2>
+            <p>'.$article['description'].'</p>
+            <p>'.$article['pubDate'].'"></div></div>';
+    }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -23,13 +58,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregateur</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style_favorites.css">
     <link rel="stylesheet" href="./assets/mediaqueries/mediaqueries.css">
 </head>
 <body>
     <header>
-    <a id="logo" href=""><img src="./assets/images/logo.png" alt="FluXML Logo" class="logo"></a>
         <nav class="web-nav" id="web-nav">
+            <a id="logo" href=""><img src="./assets/images/logo.png" alt="FluXML Logo" class="logo"></a>
             <div class="nav-section">
                 <a href="" class="nav-item"><img src="./assets/images/searchnormal.png" alt="Rechercher" class="nav-icon"></a>
                 <a href="" class="nav-item" id="moon"><img src="./assets/images/moon.png" alt="Mode" class="nav-icon" id="moon-icon"></a>
@@ -37,13 +72,13 @@
                 <a href="" class="nav-item"><img src="./assets/images/infocircle.png" alt="Rechercher" class="nav-icon"></a>
             </div>
         </nav>
-
+<!-- 
         <nav class="category-nav">
             <div class="category-hr">
                 </div>
                 <div class="categories">
                     <!-- boucle à faire en php ici -->
-                    <h2>Insolite</h2>
+                    <!-- <h2>Insolite</h2>
                 <h2>Politique</h2>
                 <h2>Sport</h2>
                 <h2>Gastronomie</h2>
@@ -51,8 +86,8 @@
                 <h2>Cinéma</h2>
                 <h2>Musique</h2>
                 <h2>High-tech</h2>
-            </div>
-        </nav>
+            </div> -->
+        </nav> -->
     </header>
 
     <section class="web-container">
@@ -62,6 +97,5 @@
         <footer>
         </footer>
     </section>
-    <script src="assets/js/script.js"></script>
 </body>
 </html>

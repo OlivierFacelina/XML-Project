@@ -1,0 +1,13 @@
+img {
+    width: 40vw;
+}
+
+.image {
+    display: flex;
+    margin-top: 5vh;
+}
+
+.text {
+    display: block;
+    margin-left: 5vh;
+}
