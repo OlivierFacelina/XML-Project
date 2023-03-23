@@ -118,6 +118,34 @@ main {
     width: 85%;
 }
 
+.search-section {
+    margin-bottom: 6vh;
+    display: flex;
+    align-items: center;
+}
+
+.search-section a {
+    z-index: 8;
+    position: absolute;
+    padding-left: 0.8vw;
+    padding-top: 0.5vh;
+}
+
+.search-icon {
+    height: 3vh;
+}
+
+.search-input {
+    width: 30vw;
+    height: 5vh;
+    background-color: #f1f1f1;
+    border: none;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    padding-left: 3vw;
+    z-index: 7;
+}
+
 .category-upper {
     display: flex;
     justify-content: space-between;
