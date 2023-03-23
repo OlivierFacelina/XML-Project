@@ -125,6 +125,10 @@ main {
 .category-title {
     font-size: 2.2em;
 }
+.title-like{
+    display: flex;
+    gap:1em;
+}
 
 
 /* Articles */

@@ -37,12 +37,15 @@ $imgUrl = $xml->xpath('//enclosure/@url');
 
         <nav class="category-nav">
             <div class="category-hr">
+            </div>
                 <div class="categories">
                     <?php for ($i = 0; $i < count($categories); $i++) { ?>
-                        <h2><?= $categories[$i] ?><i class="fa-regular fa-heart"></i></h2>
+                        <div class="title-like">
+                        <h2><?= $categories[$i] ?></h2>
+                        <i class="fa-regular fa-heart"></i>
+                        </div>
                     <?php } ?>
                 </div>
-            </div>
         </nav>
     </header>
 
