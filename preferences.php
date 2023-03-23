@@ -21,6 +21,7 @@ if(isset($_COOKIE['favorites'])){
         foreach($valeurCookie as $theme) {
             if(array_key_exists($theme, $urls)) {
                 $xml = simplexml_load_file($urls[$theme]);
+                $category = (string) $xml->channel->category;
                 foreach($xml->channel->item as $item) {
                     $title = (string) $item->title;
                     $description = (string) $item->description;
@@ -34,19 +35,10 @@ if(isset($_COOKIE['favorites'])){
                     if(isset($item->pubDate)) {
                         $pubDate = (string) $item->pubDate;
                     }
-                    $articles[] = array('title' => $title, 'description' => $description, 'image' => $image, 'pubDate' => $pubDate);
+                    $articles[] = array('title' => $title, 'description' => $description, 'image' => $image, 'pubDate' => $pubDate, 'category' => $category);
                 }
             }
         }
-    }
-
-
-    // Afficher les titres et les descriptions des articles
-    foreach($articles as $article) {
-        echo '<div class="image"><img src="'.$article['image'].'">
-            <div class="text"><h2>'.$article['title'].'</h2>
-            <p>'.$article['description'].'</p>
-            <p>'.$article['pubDate'].'"></div></div>';
     }
 }
 ?>
@@ -69,33 +61,26 @@ if(isset($_COOKIE['favorites'])){
                 <a href="" class="nav-item"><img src="./assets/images/searchnormal.png" alt="Rechercher" class="nav-icon"></a>
                 <a href="" class="nav-item" id="moon"><img src="./assets/images/moon.png" alt="Mode" class="nav-icon" id="moon-icon"></a>
                 <a href="" class="nav-item"><img src="./assets/images/heart.png" alt="Rechercher" class="nav-icon"></a>
-                <a href="" class="nav-item"><img src="./assets/images/infocircle.png" alt="Rechercher" class="nav-icon"></a>
+                <a href="" class="nav-item" id="animrubrique"><img src="./assets/images/infocircle.png" alt="Rechercher" class="nav-icon"></a>
             </div>
         </nav>
-<!-- 
-        <nav class="category-nav">
-            <div class="category-hr">
-                </div>
-                <div class="categories">
-                    <!-- boucle à faire en php ici -->
-                    <!-- <h2>Insolite</h2>
-                <h2>Politique</h2>
-                <h2>Sport</h2>
-                <h2>Gastronomie</h2>
-                <h2>Culture</h2>
-                <h2>Cinéma</h2>
-                <h2>Musique</h2>
-                <h2>High-tech</h2>
-            </div> -->
-        </nav> -->
     </header>
 
     <section class="web-container">
-        <main>
-        </main>
-
-        <footer>
-        </footer>
+        <?php 
+    // Afficher les titres et les descriptions des articles
+    echo '<h2>'.$category.'</h2>';
+    foreach($articles as $article) {
+        echo '<div class="image">
+                <img src="'.$article['image'].'">
+                <div class="text">
+                    <h2>'.$article['title'].'</h2>
+                    <p>'.$article['description'].'</p>
+                    <p>'.$article['pubDate'].'">
+                </div>
+            </div>';
+    } ?>
     </section>
+    <script src="./assets/js/script_favorites.js"></script>
 </body>
 </html>
