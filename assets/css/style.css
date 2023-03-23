@@ -106,6 +106,7 @@ nav {
 
 .fa-heart:before {
     color: white;
+    cursor: pointer;
 }
 
 
