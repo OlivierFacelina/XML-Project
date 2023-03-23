@@ -17,7 +17,6 @@ if (isDarkMode) {
   navbar.classList.add('dark-mode');
   moonIcon.setAttribute('src', './assets/images/sunlight.png');
   moonIcon.setAttribute('alt', 'Mode nuit');
-  searchIcon.setAttribute('src', './assets/images/searchlight.png');
   heartEmoji.setAttribute('src', './assets/images/heartlight.png');
   heartCategory.setAttribute('src', './assets/images/heartlight.png');
   infocircleIcon.setAttribute('src', './assets/images/infocirclelight.png');
@@ -44,7 +43,6 @@ moonIcon.addEventListener('click', (event) => {
     navbar.classList.add('dark-mode');
     moonIcon.setAttribute('src', './assets/images/sunlight.png');
     moonIcon.setAttribute('alt', 'Mode nuit');
-    searchIcon.setAttribute('src', './assets/images/searchlight.png');
     heartEmoji.setAttribute('src', './assets/images/heartlight.png');
     heartCategory.setAttribute('src', './assets/images/heartlight.png');
     infocircleIcon.setAttribute('src', './assets/images/infocirclelight.png');
