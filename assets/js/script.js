@@ -63,25 +63,20 @@ const h2Elements = document.querySelectorAll('h2');
 const h2Values = [];
 const lien = document.getElementById('heart')
 
-h2Elements.forEach(element => {
-  element.addEventListener('click', () => {
-    h2Values.push(element.textContent);
-    console.log(h2Values);
-  });
-});
-
 favorites.forEach(element => { 
   element.addEventListener('click', () => {
-    // Enregistrement cookies 
+    h2Values.push(element.id);
+    // Enregistrement cookies
+    // console.log(element.id)
     document.cookie = `favorites=${JSON.stringify(h2Values)};expires=Thu, 01 Jan 2099 00:00:00 UTC;path=/`;
   })
 });
 
 lien.addEventListener('click', (event) => {
   event.preventDefault();
-  const favorites_link = JSON.parse(localStorage.getItem('favorites'));
+  const favorites_link = JSON.parse(document.cookie.split('; ').find(row => row.startsWith('favorites=')).split('=')[1]);
   console.log(favorites_link);
-  const favorites = JSON.parse(localStorage.getItem('favorites'));
+  const favorites = JSON.parse(document.cookie.split('; ').find(row => row.startsWith('favorites=')).split('=')[1]);
   const results = document.querySelector('body');
   results.innerHTML = ''; // effacer les éléments actuels
   const parentDiv = document.createElement('div'); // Créer un élément div parent
