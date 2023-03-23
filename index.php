@@ -37,6 +37,7 @@ $imgUrl = $xml->xpath('//enclosure/@url');
 
         <nav class="category-nav" id="menu-deroulant">
             <div class="category-hr">
+
             </div>
                 <div class="categories" id="mask">
                     <?php for ($i = 0; $i < count($categories); $i++) { ?>
@@ -52,6 +53,7 @@ $imgUrl = $xml->xpath('//enclosure/@url');
     <section class="web-container">
         <main>
             <section class="container" id="anim">
+
                 <div class="category-upper">
                     <h2 class="category-title">Insolite</h2>
                     <a href=""><img src="./assets/images/heart.png" alt="" class="add-favourite" id="heart-category"></a>
