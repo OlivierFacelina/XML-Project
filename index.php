@@ -107,10 +107,13 @@ $imgUrl = $xml->xpath('//enclosure/@url');
                 </form>
 
                 <div class="category-upper">
-                    <h1 class="page-title">
-                        <?= $categoryName[0] ?>
-                    </h1>
-                </div>
+                    <?php if (isset($_GET["id"]) && isset($categoryNames[$_GET["id"]])) { ?>
+                        <h1 class="page-title"><?= $categoryNames[$_GET["id"]] ?></h1>
+                    <?php } else { ?>
+                        <h1 class="page-title"><?= $categoryNames[0] ?></h1>
+                    <?php } ?>
+</div>
+
                 <hr>
 
                 <section id="articles">
