@@ -1,0 +1,98 @@
+/* LITTLE  ECRAN */
+@media (max-width: 1041px) { 
+.categories{
+    margin-left: 1em;
+}
+/* .category-nav{
+    min-width: 220px;
+} */
+}
+
+/* TABLET */
+@media (max-width: 885px) { 
+.article{
+    flex-direction: column;
+    max-height: none;
+}
+}
+/* PHONE */
+@media (max-width: 679px) {
+.container{
+    min-width: 409px; 
+}
+.search-section{
+    justify-content: space-between;
+}
+
+/* TOP BAR */
+body{
+    flex-direction: column;
+}
+header {
+    /* position:none; */
+    flex-direction: row;
+    height: 5vh;
+
+}
+.web-nav{
+    width: 100vw;
+    height: 5vh;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.nav-section{
+    flex-direction: row;
+    padding-top: 0;
+    gap:0.5em;
+
+    padding-right: 1em;
+}
+.nav-icon{
+    margin-block: 0;
+}
+.logo{
+    width: 4.5vw;
+    padding-top: 4px;
+    padding-left: 1em;
+}
+
+
+.main {
+    padding-top: 3vh ;
+    margin-left:0;
+}
+.search-input{
+    padding-left: 6vw;
+}
+
+.category-nav{
+    margin-left: 0;
+    width: 200px;
+}
+.article-img{
+    margin-right: 0;
+}
+
+}  
+
+
+/* LITTLE PHONE */
+@media (max-width: 437px) {
+    .article-img{
+        max-height: 20vh;
+    }
+    .container{
+        min-width: 349px;
+    }
+}
+
+/* LITTLE LITTLE PHONE */
+@media (max-width: 385px) {
+    .article-img{
+        max-height: 15vh;
+    }
+    .container{
+        min-width: 260px;
+    }
+}
