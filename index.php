@@ -25,7 +25,7 @@ if(isset($_COOKIE['favorites'])){
 }
 
 // $xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
-
+$xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
 $titles = $xml->xpath('//title');
 $descriptions = $xml->xpath('//description');
 $publishDates = $xml->xpath('//pubDate');
