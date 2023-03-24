@@ -264,3 +264,18 @@ footer {
     font-size: 0.7em;
     text-align: center;
 }
+
+
+@media screen and (max-width: 640px) {
+    /* Footer */
+
+    .footer-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-info-item {
+        width: 80vw;
+        margin-bottom: 6vh;
+    }
+}
