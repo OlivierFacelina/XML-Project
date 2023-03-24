@@ -65,6 +65,7 @@ const link = document.getElementById('heart')
 
 favorites.forEach(element => { 
   element.addEventListener('click', () => {
+    console.log(element.id);
     values.push(element.id);
     // Enregistrement cookies
     // console.log(element.id)

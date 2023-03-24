@@ -8,7 +8,7 @@ if(isset($_COOKIE['favorites'])){
     $urls = array(
         'Insolite' => 'https://www.lepoint.fr/insolite/rss.xml',
         'Politique' => 'http://www.lepoint.fr/politique/rss.xml',
-        'Sport' => 'http://www.lepoint.fr/sport/rss.xml',
+        'Sports' => 'http://www.lepoint.fr/sport/rss.xml',
         'Gastronomie' => 'http://www.lepoint.fr/gastronomie/rss.xml',
         'Culture' => 'http://www.lepoint.fr/culture/rss.xml',
         'Cinéma' => 'http://www.lepoint.fr/cinema/rss.xml',
@@ -83,7 +83,7 @@ if(isset($_COOKIE['favorites'])){
             <section class="container">
                 <?php 
                     // Afficher les titres et les descriptions des articles
-                    // echo '<h2>'.$category.'</h2>';
+                    echo '<h2>'.$category.'</h2>';
                     foreach($articles as $article) {
                         echo '
                                 <div class="article">
