@@ -65,7 +65,7 @@ $imgUrl = $xml->xpath('//enclosure/@url');
                 <div class="categories" id="mask">
                     <?php for ($i = 0; $i < count($categories); $i++) { ?>
                         <div class="title-like">
-                        <h2><?= $categories[$i] ?></h2>
+                        <h2 class="category-title"><?= $categories[$i] ?></h2>
                         <i class="fa-regular fa-heart" id="<?= $categories[$i]?>"></i>
                         </div>
                     <?php } ?>
@@ -96,8 +96,7 @@ $imgUrl = $xml->xpath('//enclosure/@url');
                 </form>
 
                 <div class="category-upper">
-                    <h2 class="category-title">Insolite</h2>
-                    <a href=""><img src="./assets/images/heart.png" alt="" class="add-favourite" id="heart-category"></a>
+                    <h1 class="page-title">Actualité</h1>
                 </div>
                 <hr>
 
