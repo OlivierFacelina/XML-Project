@@ -3,7 +3,6 @@
 const moonIcon = document.getElementById('moon-icon');
 const searchIcon = document.getElementById('search-icon');
 const heartEmoji = document.getElementById('heart-emoji');
-const heartCategory = document.getElementById('heart-category');
 const infocircleIcon = document.getElementById('infocircle-icon');
 const navbar = document.getElementById('web-nav');
 // console.log(moonIcon)
@@ -19,7 +18,6 @@ if (isDarkMode) {
   moonIcon.setAttribute('alt', 'Mode nuit');
   searchIcon.setAttribute('src', './assets/images/searchlight.png');
   heartEmoji.setAttribute('src', './assets/images/heartlight.png');
-  heartCategory.setAttribute('src', './assets/images/heartlight.png');
   infocircleIcon.setAttribute('src', './assets/images/infocirclelight.png');
 } else {
   document.body.classList.remove('dark-mode');
@@ -37,7 +35,6 @@ moonIcon.addEventListener('click', (event) => {
     moonIcon.setAttribute('alt', 'Mode clair');
     searchIcon.setAttribute('src', './assets/images/searchnormal.png');
     heartEmoji.setAttribute('src', './assets/images/heart.png');
-    heartCategory.setAttribute('src', './assets/images/heart.png');
     infocircleIcon.setAttribute('src', './assets/images/infocircle.png');
   } else {
     document.body.classList.add('dark-mode');
@@ -46,7 +43,6 @@ moonIcon.addEventListener('click', (event) => {
     moonIcon.setAttribute('alt', 'Mode nuit');
     searchIcon.setAttribute('src', './assets/images/searchlight.png');
     heartEmoji.setAttribute('src', './assets/images/heartlight.png');
-    heartCategory.setAttribute('src', './assets/images/heartlight.png');
     infocircleIcon.setAttribute('src', './assets/images/infocirclelight.png');
   }
 
