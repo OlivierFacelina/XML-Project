@@ -56,18 +56,40 @@ moonIcon.addEventListener('click', (event) => {
 // Pour ajouter aux favoris, quand tu cliques sur le coeur ça l'ajoute aux favoris
 const favorites = document.querySelectorAll('.fa-heart');
 const h2 = document.querySelectorAll('h2');
-const values = [];
+// let values = JSON.parse(getCookie('favorites')) || [];
 const link = document.getElementById('heart')
+let isActive = false
 
 favorites.forEach(element => { 
   element.addEventListener('click', () => {
-    console.log(element.id);
-    values.push(element.id);
-    // Enregistrement cookies
-    // console.log(element.id)
+    if (isActive) {
+      isActive = false
+      element.classList.replace("fa-solid","fa-regular");
+      // const index = values.indexOf(element.id);
+      // if (index !== -1) {
+      //   values.splice(index, 1);
+      // }
+      // alert("Favori désactivé.")
+    }
+    else {
+      isActive = true
+      element.classList.replace("fa-regular","fa-solid");
+      values.push(element.id);
+      // Enregistrement cookies
+      // console.log(element.id)
+    }
     document.cookie = `favorites=${JSON.stringify(values)};expires=Thu, 01 Jan 2099 00:00:00 UTC;path=/`;
   })
 });
+
+// // On va récup le cookie existant grâce à cette fonction
+// function getCookie(name) {
+//   const value = `; ${document.cookie}`;
+//   const parts = value.split(`; ${name}=`);
+//   if (parts.length === 2) {
+//     return parts.pop().split(';').shift();
+//   }
+// }
 
 // ____________________________________________________________________________________________________________________
 //                                         ANIM NAV
