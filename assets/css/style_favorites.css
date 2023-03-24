@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto_Flex/RobotoFlex-VariableFont_GRAD\,XTRA\,YOPQ\,YTAS\,YTDE\,YTFI\,YTLC\,YTUC\,opsz\,slnt\,wdth\,wght.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    position: fixed;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Nav Site */
+.logo {
+    width: 3.5vw;
+    padding-top: 2vh;
+}
+
+.web-nav {
+    display: flex;
+    justify-content: start;
+    background-color: #ffffff;
+    width: 4.7vw;
+    height: 100vh;
+    box-shadow: 1px 0px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.nav-section {
+    display: flex;
+    flex-direction: column;
+    padding-top: 25vh;
+}
+
+.nav-icon {
+    width: 2vw;
+    margin-block: 2vh;
+}
+
+/* Style XML */
+
+img {
+    width: 40vw;
+}
+
+.image {
+    display: flex;
+    margin-top: 5vh;
+}
+
+.text {
+    display: block;
+    margin-left: 5vh;
+}
+
+/* Dark-mode */
+
+.dark-mode {
+    background-color: #2f2f2f;
+    color: #ffffff;
+}
