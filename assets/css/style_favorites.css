@@ -79,3 +79,42 @@ img {
     background-color: #2f2f2f;
     color: #ffffff;
 }
+
+/* Nav Catégories */
+
+.category-nav {
+    /* à mettre en none pour dev en attendant la fonctionnalité css */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(74, 137, 162, 0.9);
+    backdrop-filter: blur(2.5px);
+    position: absolute;
+    margin-left: 4.7vw;
+    width: 20vw;
+    height: 100vh;
+    /* display: none; */
+
+    transition: 0.3s;
+}
+
+.categories h2 {
+    font-size: 1em;
+    font-weight: 200;
+    color: #ffffff;
+}
+
+.category-hr{
+    height: 60vh;
+    width: 2px;
+    background: #ffffff;
+}
+
+.categories{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    margin-left: 2em;
+    width: 9vw;
+}
