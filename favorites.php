@@ -1,4 +1,5 @@
 <?php 
+$categories = ['Insolite','Politique','Sport','Gastronomie','Culture','Cinéma','Musique','High-tech'];
 // Récupérer les valeurs stockées dans les cookies
 if(isset($_COOKIE['favorites'])){
     $valeurCookie = json_decode($_COOKIE['favorites'], true);
@@ -64,22 +65,34 @@ if(isset($_COOKIE['favorites'])){
                 <a class="nav-item" id="animrubrique"><img src="./assets/images/infocircle.png" alt="Rechercher" class="nav-icon" id="infocircle-icon"></a>
             </div>
         </nav>
+        <nav class="category-nav" id="menu-deroulant">
+            <div class="category-hr">
+            </div>
+                <div class="categories" id="mask">
+                    <?php for ($i = 0; $i < count($categories); $i++) { ?>
+                        <div class="title-like">
+                        <h2><?= $categories[$i] ?></h2>
+                        <i class="fa-regular fa-heart" id="<?= $categories[$i]?>"></i>
+                        </div>
+                    <?php } ?>
+                </div>
+        </nav>
     </header>
 
     <section class="web-container">
         <?php 
-    // Afficher les titres et les descriptions des articles
-    echo '<h2>'.$category.'</h2>';
-    foreach($articles as $article) {
-        echo '<div class="image">
-                <img src="'.$article['image'].'">
-                <div class="text">
-                    <h2>'.$article['title'].'</h2>
-                    <p>'.$article['description'].'</p>
-                    <p>'.$article['pubDate'].'">
-                </div>
-            </div>';
-    } ?>
+            // Afficher les titres et les descriptions des articles
+            echo '<h2>'.$category.'</h2>';
+            foreach($articles as $article) {
+                echo '<div class="image">
+                        <img src="'.$article['image'].'">
+                        <div class="text">
+                            <h2>'.$article['title'].'</h2>
+                            <p>'.$article['description'].'</p>
+                            <p>'.$article['pubDate'].'">
+                        </div>
+                    </div>';
+        } ?>
     </section>
     <script src="./assets/js/script_favorites.js"></script>
 </body>
