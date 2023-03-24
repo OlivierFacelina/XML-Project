@@ -194,7 +194,9 @@ main {
     display: flex;
     gap:1em;
 }
-
+.title-like a {
+    text-decoration: none;
+}
 
 /* Articles */
 

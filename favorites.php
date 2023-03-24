@@ -83,7 +83,7 @@ if(isset($_COOKIE['favorites'])){
             <section class="container">
                 <?php 
                     // Afficher les titres et les descriptions des articles
-                    echo '<h2>'.$category.'</h2>';
+                    // echo '<h2>'.$category.'</h2>';
                     foreach($articles as $article) {
                         echo '
                                 <div class="article">

@@ -1,32 +1,41 @@
 <?php
-$categories = ['Insolite','Politique','Sport','Gastronomie','Culture','Cinéma','Musique','High-tech'];
+$categories = ['insolite','politique','sport','gastronomie','culture','cinema','musique','high-tech-internet/planete-appli'];
 
 // Switch case si l'utilisateur a choisi ce cookie alors on lui met ce flux
-// if(isset($_COOKIE['favorites'])){
-//     $valeurCookie = json_decode($_COOKIE['favorites'], true);
-//     if (in_array('Insolite', $valeurCookie)) {
-//         // echo 'Tu as choisi le thème : Insolite';
-//         $xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
-//     } elseif (in_array('Politique',$valeurCookie)) {
-//         $xml = simplexml_load_file('http://www.lepoint.fr/politique/rss.xml'); 
-//     } elseif (in_array('Sport',$valeurCookie)) {
-//         $xml = simplexml_load_file('http://www.lepoint.fr/sport/rss.xml');
-//     } elseif (in_array('Gastronomie',$valeurCookie)) {
-//         $xml = simplexml_load_file('http://www.lepoint.fr/gastronomie/rss.xml');
-//     } elseif (in_array('Culture',$valeurCookie)) {
-//         $xml = simplexml_load_file('http://www.lepoint.fr/culture/rss.xml');
-//     } elseif (in_array('Cinéma',$valeurCookie)) {
-//         $xml = simplexml_load_file('http://www.lepoint.fr/cinema/rss.xml');
-//     } elseif (in_array('Musique',$valeurCookie)) {
-//         $xml = simplexml_load_file('http://www.lepoint.fr/musique/rss.xml');
-//     } elseif (in_array('High-tech',$valeurCookie)) {
-//         $xml = simplexml_load_file('http://www.lepoint.fr/high-tech-internet/planete-appli/rss.xml');
-//     } 
-// }
+if(isset($_COOKIE['favorites'])){
+    $valeurCookie = json_decode($_COOKIE['favorites'], true);
+    if (in_array('Insolite', $valeurCookie)) {
+        // echo 'Tu as choisi le thème : Insolite';
+        $xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
+    } elseif (in_array('Politique',$valeurCookie)) {
+        $xml = simplexml_load_file('http://www.lepoint.fr/politique/rss.xml'); 
+    } elseif (in_array('Sport',$valeurCookie)) {
+        $xml = simplexml_load_file('http://www.lepoint.fr/sport/rss.xml');
+    } elseif (in_array('Gastronomie',$valeurCookie)) {
+        $xml = simplexml_load_file('http://www.lepoint.fr/gastronomie/rss.xml');
+    } elseif (in_array('Culture',$valeurCookie)) {
+        $xml = simplexml_load_file('http://www.lepoint.fr/culture/rss.xml');
+    } elseif (in_array('Cinéma',$valeurCookie)) {
+        $xml = simplexml_load_file('http://www.lepoint.fr/cinema/rss.xml');
+    } elseif (in_array('Musique',$valeurCookie)) {
+        $xml = simplexml_load_file('http://www.lepoint.fr/musique/rss.xml');
+    } elseif (in_array('High-tech',$valeurCookie)) {
+        $xml = simplexml_load_file('http://www.lepoint.fr/high-tech-internet/planete-appli/rss.xml');
+    } 
+}
+$xml = simplexml_load_file('https://www.lepoint.fr/'.$categories[0].'/rss.xml'); 
+for ($i = 0; $i < 8; $i++) {
+    $xml = simplexml_load_file('https://www.lepoint.fr/'.$categories[$i].'/rss.xml'); 
+    $categoryName = $xml->xpath('//category');
+    $categoryNames[] = $categoryName[0];
+    // Création d'une deuxième variables 
+}
 
-// $xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
-$xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
-$categoryName = $xml->xpath('//category');
+if (isset($_GET["id"])){
+    $xml = simplexml_load_file('https://www.lepoint.fr/'.$categories[$_GET["id"]].'/rss.xml'); 
+}
+// http://localhost/php/Projet_XML/XML-Project/?id=
+
 $titles = $xml->xpath('//title');
 $descriptions = $xml->xpath('//description');
 $publishDates = $xml->xpath('//pubDate');
@@ -63,11 +72,14 @@ $imgUrl = $xml->xpath('//enclosure/@url');
             <div class="category-hr">
             </div>
                 <div class="categories" id="mask">
-                    <?php for ($i = 0; $i < count($categories); $i++) { ?>
+                    <?php foreach ($categoryNames as $key => $categoryName) { ?>
                         <div class="title-like">
-                        <h2 class="category-title"><?= $categories[$i] ?></h2>
-                        <i class="fa-regular fa-heart" id="<?= $categories[$i]?>"></i>
+                        <a href="?id=<?= $key ?>">                  
+                        <h2 class="category-title"><?= $categoryName ?></h2>
+                        </a>
+                        <i class="fa-regular fa-heart"></i>
                         </div>
+
                     <?php } ?>
                 </div>
         </nav>
