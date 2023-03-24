@@ -13,6 +13,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: column;
     height: 100vh;
     list-style-type: none;
     text-decoration: none;
@@ -59,6 +60,17 @@ nav {
 
 /* Style XML */
 
+main {
+    margin-left: 4.7vw;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 85%;
+}
+
+
 img {
     width: 40vw;
 }
@@ -78,4 +90,51 @@ img {
 .dark-mode {
     background-color: #2f2f2f;
     color: #ffffff;
+}
+
+/* Footer */
+
+footer {
+    padding-block: 8vh;
+    margin-top: 15vh;
+    height: auto;
+    width: (100-4.7)vw;
+    background-color: rgba(47, 87, 102, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4.7vw;
+    color: #ffffff;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-info-item {
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-title {
+    margin-bottom: 2.5vh;
+    text-transform: uppercase;
+}
+
+.footer-desc-section {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.85)
+}
+
+.footer-desc {
+    margin-bottom: 1vh;
+}
+
+.copyright {
+    margin-top: 8vh;
+    font-size: 0.7em;
+    text-align: center;
 }

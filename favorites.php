@@ -56,7 +56,7 @@ if(isset($_COOKIE['favorites'])){
 <body>
     <header>
         <nav class="web-nav" id="web-nav">
-            <a id="logo" href=""><img src="./assets/images/logo.png" alt="FluXML Logo" class="logo"></a>
+            <a id="logo" href="./index.php"><img src="./assets/images/logo.png" alt="FluXML Logo" class="logo"></a>
             <div class="nav-section">
                 <a href="" class="nav-item"><img src="./assets/images/searchnormal.png" alt="Rechercher" class="nav-icon" id="search-icon"></a>
                 <a href="" class="nav-item" id="moon"><img src="./assets/images/moon.png" alt="Mode" class="nav-icon" id="moon-icon"></a>
@@ -67,19 +67,24 @@ if(isset($_COOKIE['favorites'])){
     </header>
 
     <section class="web-container">
-        <?php 
-    // Afficher les titres et les descriptions des articles
-    echo '<h2>'.$category.'</h2>';
-    foreach($articles as $article) {
-        echo '<div class="image">
-                <img src="'.$article['image'].'">
-                <div class="text">
-                    <h2>'.$article['title'].'</h2>
-                    <p>'.$article['description'].'</p>
-                    <p>'.$article['pubDate'].'">
-                </div>
-            </div>';
-    } ?>
+        <main>
+            <section class="container">
+                <?php 
+                    // Afficher les titres et les descriptions des articles
+                    echo '<h2>'.$category.'</h2>';
+                    foreach($articles as $article) {
+                        echo '<div class="image">
+                                <img src="'.$article['image'].'">
+                                <div class="text">
+                                    <h2>'.$article['title'].'</h2>
+                                    <p>'.$article['description'].'</p>
+                                    <p>'.$article['pubDate'].'">
+                                </div>
+                            </div>';
+                } ?>
+            </section>
+        </main>
+        <?php include dirname(__FILE__) . "/footer.php" ?>
     </section>
     <script src="./assets/js/script_favorites.js"></script>
 </body>

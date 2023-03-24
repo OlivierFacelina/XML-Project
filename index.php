@@ -50,7 +50,7 @@ $imgUrl = $xml->xpath('//enclosure/@url');
 <body>
     <header>
         <nav class="web-nav" id="web-nav">
-            <a id="logo" href=""><img src="./assets/images/logo.png" alt="FluXML Logo" class="logo"></a>
+            <a id="logo" href="./index.php"><img src="./assets/images/logo.png" alt="FluXML Logo" class="logo"></a>
             <div class="nav-section">
                 <a href="" class="nav-item"><img src="./assets/images/searchnormal.png" alt="Rechercher" class="nav-icon" id="search-icon"></a>
                 <a href="" class="nav-item" id="moon"><img src="./assets/images/moon.png" alt="Mode" class="nav-icon" id="moon-icon"></a>
@@ -119,9 +119,7 @@ $imgUrl = $xml->xpath('//enclosure/@url');
                 </section>
             </section>
         </main>
-
-        <footer>
-        </footer>
+        <?php include dirname(__FILE__) . "/footer.php" ?>
     </section>
     <script src="assets/js/script.js"></script>
     <script
