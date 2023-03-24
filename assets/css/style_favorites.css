@@ -85,6 +85,49 @@ img {
     margin-left: 5vh;
 }
 
+/* Articles */
+
+#articles {
+    margin-top: 8vh;
+}
+
+.article {
+    display: flex;
+    align-items: start;
+    margin-top: 5vh;
+    max-height: 30vh;
+}
+
+.article-info {
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.article-img {
+    max-width: 22vw;
+    margin-right: 3vw;
+}
+
+.article-title {
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-bottom: 2vh;
+}
+
+.article-desc {
+    font-size: 1em;
+    font-weight: 300;
+    text-align: justify;
+}
+
+.article-date {
+    font-size: 0.8em;
+    color: rgb(116, 116, 116);
+}
+
 /* Dark-mode */
 
 .dark-mode {
@@ -99,7 +142,7 @@ footer {
     margin-top: 15vh;
     height: auto;
     width: (100-4.7)vw;
-    background-color: rgba(47, 87, 102, 0.9);
+    background-color: rgba(47, 87, 102, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -122,6 +165,7 @@ footer {
 .footer-title {
     margin-bottom: 2.5vh;
     text-transform: uppercase;
+    font-weight: 500;
 }
 
 .footer-desc-section {

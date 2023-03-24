@@ -73,14 +73,18 @@ if(isset($_COOKIE['favorites'])){
                     // Afficher les titres et les descriptions des articles
                     echo '<h2>'.$category.'</h2>';
                     foreach($articles as $article) {
-                        echo '<div class="image">
-                                <img src="'.$article['image'].'">
-                                <div class="text">
-                                    <h2>'.$article['title'].'</h2>
-                                    <p>'.$article['description'].'</p>
-                                    <p>'.$article['pubDate'].'">
+                        echo '
+                                <div class="article">
+                                    <img src="'.$article['image'].'" class="article-img">
+                                    <div class="article-info">
+                                        <div class="article-top">
+                                            <h3 class="article-title">'.$article['title'].'</h2>
+                                            <h4 class="article-desc">'.$article['description'].'</p>
+                                        </div>
+                                        <h5 class="article-date">'.$article['pubDate'].'">
+                                    </div>
                                 </div>
-                            </div>';
+                            ';
                 } ?>
             </section>
         </main>

@@ -191,7 +191,7 @@ main {
 }
 
 .article-img {
-    max-height: 25vh;
+    max-width: 22vw;
     margin-right: 3vw;
 }
 
@@ -220,7 +220,7 @@ footer {
     margin-top: 15vh;
     height: auto;
     width: (100-4.7)vw;
-    background-color: rgba(47, 87, 102, 0.9);
+    background-color: rgba(47, 87, 102, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -243,6 +243,7 @@ footer {
 .footer-title {
     margin-bottom: 2.5vh;
     text-transform: uppercase;
+    font-weight: 500;
 }
 
 .footer-desc-section {
