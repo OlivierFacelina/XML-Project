@@ -1,4 +1,5 @@
 <?php 
+$categories = ['Insolite','Politique','Sport','Gastronomie','Culture','Cinéma','Musique','High-tech'];
 // Récupérer les valeurs stockées dans les cookies
 if(isset($_COOKIE['favorites'])){
     $valeurCookie = json_decode($_COOKIE['favorites'], true);
@@ -63,6 +64,18 @@ if(isset($_COOKIE['favorites'])){
                 <a href="" class="nav-item" id="heart"><img src="./assets/images/heart.png" alt="Rechercher" class="nav-icon" id="heart-emoji"></a>
                 <a class="nav-item" id="animrubrique"><img src="./assets/images/infocircle.png" alt="Rechercher" class="nav-icon" id="infocircle-icon"></a>
             </div>
+        </nav>
+        <nav class="category-nav" id="menu-deroulant">
+            <div class="category-hr">
+            </div>
+                <div class="categories" id="mask">
+                    <?php for ($i = 0; $i < count($categories); $i++) { ?>
+                        <div class="title-like">
+                        <h2><?= $categories[$i] ?></h2>
+                        <i class="fa-regular fa-heart" id="<?= $categories[$i]?>"></i>
+                        </div>
+                    <?php } ?>
+                </div>
         </nav>
     </header>
 
