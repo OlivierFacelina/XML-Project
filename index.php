@@ -50,7 +50,7 @@ $imgUrl = $xml->xpath('//enclosure/@url');
 <body>
     <header>
         <nav class="web-nav" id="web-nav">
-            <a id="logo" href=""><img src="./assets/images/logo.png" alt="FluXML Logo" class="logo"></a>
+            <a id="logo" href="./index.php"><img src="./assets/images/logo.png" alt="FluXML Logo" class="logo"></a>
             <div class="nav-section">
                 <a href="" class="nav-item" id="moon"><img src="./assets/images/moon.png" alt="Mode" class="nav-icon" id="moon-icon"></a>
                 <a href="favorites.php" class="nav-item" id="heart"><img src="./assets/images/heart.png" alt="Rechercher" class="nav-icon" id="heart-emoji"></a>
@@ -64,7 +64,7 @@ $imgUrl = $xml->xpath('//enclosure/@url');
                 <div class="categories" id="mask">
                     <?php for ($i = 0; $i < count($categories); $i++) { ?>
                         <div class="title-like">
-                        <h2><?= $categories[$i] ?></h2>
+                        <h2 class="category-title"><?= $categories[$i] ?></h2>
                         <i class="fa-regular fa-heart" id="<?= $categories[$i]?>"></i>
                         </div>
                     <?php } ?>
@@ -94,8 +94,7 @@ $imgUrl = $xml->xpath('//enclosure/@url');
                 </form>
 
                 <div class="category-upper">
-                    <h2 class="category-title">Insolite</h2>
-                    <a href=""><img src="./assets/images/heart.png" alt="" class="add-favourite" id="heart-category"></a>
+                    <h1 class="page-title">Actualité</h1>
                 </div>
                 <hr>
 
@@ -117,9 +116,7 @@ $imgUrl = $xml->xpath('//enclosure/@url');
                 </section>
             </section>
         </main>
-
-        <footer>
-        </footer>
+        <?php include dirname(__FILE__) . "/footer.php" ?>
     </section>
     <script src="assets/js/script.js"></script>
     <script

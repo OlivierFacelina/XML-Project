@@ -6,6 +6,8 @@ const heartEmoji = document.getElementById('heart-emoji');
 const heartCategory = document.getElementById('heart-category');
 const infocircleIcon = document.getElementById('infocircle-icon');
 const navbar = document.getElementById('web-nav');
+const category = document.querySelectorAll("h2.category-title");
+console.log(category[0].textContent)
 // console.log(moonIcon)
 
 // récupérer la valeur de isDarkMode dans le localStorage
@@ -148,3 +150,8 @@ searchForm.addEventListener('submit', (event) => {
   searchCategories();
 });
 
+category.addEventListener('click', (event) => {
+  console.log("oui");
+  var categoryName = category[0].textContent;
+  window.open("/php/XML-Project/" + categoryName + ".php");
+});
