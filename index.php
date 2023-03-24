@@ -2,30 +2,31 @@
 $categories = ['Insolite','Politique','Sport','Gastronomie','Culture','Cinéma','Musique','High-tech'];
 
 // Switch case si l'utilisateur a choisi ce cookie alors on lui met ce flux
-if(isset($_COOKIE['favorites'])){
-    $valeurCookie = json_decode($_COOKIE['favorites'], true);
-    if (in_array('Insolite', $valeurCookie)) {
-        // echo 'Tu as choisi le thème : Insolite';
-        $xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
-    } elseif (in_array('Politique',$valeurCookie)) {
-        $xml = simplexml_load_file('http://www.lepoint.fr/politique/rss.xml'); 
-    } elseif (in_array('Sport',$valeurCookie)) {
-        $xml = simplexml_load_file('http://www.lepoint.fr/sport/rss.xml');
-    } elseif (in_array('Gastronomie',$valeurCookie)) {
-        $xml = simplexml_load_file('http://www.lepoint.fr/gastronomie/rss.xml');
-    } elseif (in_array('Culture',$valeurCookie)) {
-        $xml = simplexml_load_file('http://www.lepoint.fr/culture/rss.xml');
-    } elseif (in_array('Cinéma',$valeurCookie)) {
-        $xml = simplexml_load_file('http://www.lepoint.fr/cinema/rss.xml');
-    } elseif (in_array('Musique',$valeurCookie)) {
-        $xml = simplexml_load_file('http://www.lepoint.fr/musique/rss.xml');
-    } elseif (in_array('High-tech',$valeurCookie)) {
-        $xml = simplexml_load_file('http://www.lepoint.fr/high-tech-internet/planete-appli/rss.xml');
-    } 
-}
+// if(isset($_COOKIE['favorites'])){
+//     $valeurCookie = json_decode($_COOKIE['favorites'], true);
+//     if (in_array('Insolite', $valeurCookie)) {
+//         // echo 'Tu as choisi le thème : Insolite';
+//         $xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
+//     } elseif (in_array('Politique',$valeurCookie)) {
+//         $xml = simplexml_load_file('http://www.lepoint.fr/politique/rss.xml'); 
+//     } elseif (in_array('Sport',$valeurCookie)) {
+//         $xml = simplexml_load_file('http://www.lepoint.fr/sport/rss.xml');
+//     } elseif (in_array('Gastronomie',$valeurCookie)) {
+//         $xml = simplexml_load_file('http://www.lepoint.fr/gastronomie/rss.xml');
+//     } elseif (in_array('Culture',$valeurCookie)) {
+//         $xml = simplexml_load_file('http://www.lepoint.fr/culture/rss.xml');
+//     } elseif (in_array('Cinéma',$valeurCookie)) {
+//         $xml = simplexml_load_file('http://www.lepoint.fr/cinema/rss.xml');
+//     } elseif (in_array('Musique',$valeurCookie)) {
+//         $xml = simplexml_load_file('http://www.lepoint.fr/musique/rss.xml');
+//     } elseif (in_array('High-tech',$valeurCookie)) {
+//         $xml = simplexml_load_file('http://www.lepoint.fr/high-tech-internet/planete-appli/rss.xml');
+//     } 
+// }
 
 // $xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
 $xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
+$categoryName = $xml->xpath('//category');
 $titles = $xml->xpath('//title');
 $descriptions = $xml->xpath('//description');
 $publishDates = $xml->xpath('//pubDate');
@@ -94,7 +95,9 @@ $imgUrl = $xml->xpath('//enclosure/@url');
                 </form>
 
                 <div class="category-upper">
-                    <h1 class="page-title">Actualité</h1>
+                    <h1 class="page-title">
+                        <?= $categoryName[0] ?>
+                    </h1>
                 </div>
                 <hr>
 
@@ -103,7 +106,7 @@ $imgUrl = $xml->xpath('//enclosure/@url');
                         for ($i = 2; $i < 10; $i++) {
                     ?>
                         <div class="article">
-                            <a href="<?= $links[$i] ?>, " target="blank"><img src="<?= $imgUrl[$i - 2] ?>" alt="" class="article-img"></a>
+                            <a href="<?= $links[$i] ?> " target="blank"><img src="<?= $imgUrl[$i - 2] ?>" alt="" class="article-img"></a>
                             <div class="article-info">
                                 <div class="article-top">
                                     <h3 class="article-title"><?= $titles[$i] ?></h3>
