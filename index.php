@@ -6,7 +6,7 @@ if(isset($_COOKIE['favorites'])){
     $valeurCookie = json_decode($_COOKIE['favorites'], true);
     switch($valeurCookie[0]){
         case 'Insolite':
-            $xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
+            // $xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
             break;
         case 'Sport':
             echo 'Tu as choisi le thème : Sport';
@@ -19,7 +19,7 @@ if(isset($_COOKIE['favorites'])){
     }
 }
 
-// $xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
+$xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
 
 $titles = $xml->xpath('//title');
 $descriptions = $xml->xpath('//description');
