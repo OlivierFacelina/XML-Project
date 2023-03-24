@@ -74,17 +74,28 @@ favorites.forEach(element => {
 
 // ____________________________________________________________________________________________________________________
 //                                         ANIM NAV
+// Définir media query
+// 680 équivalent à la nav qui passe en haut
+var mediaQuery_680px = window.matchMedia('(max-width: 680px)');
+
 
 const animrubrique = document.getElementById("animrubrique");
 let isWhite = true;
 const menu_deroulant = document.getElementById("menu-deroulant");
 const mask = document.getElementById("mask")
-
-animrubrique.addEventListener('click', event => {
+if (!mediaQuery_680px.matches){
+  animrubrique.addEventListener('click', event => {
     menu_deroulant.style.width = menu_deroulant.offsetWidth > 15 ? "0vw" : "20vw";
     mask.style.display = mask.offsetWidth > 15 ? "none" : "flex"
     menu_deroulant.style.backdropFilter = menu_deroulant.offsetWidth > 15 ? "none" : "blur(2.5px)"
+});}
+else {
+  animrubrique.addEventListener('click', event => {
+    menu_deroulant.style.width = menu_deroulant.offsetWidth > 15 ? "0vw" : "50vw";
+    mask.style.display = mask.offsetWidth > 15 ? "none" : "flex"
+    menu_deroulant.style.backdropFilter = menu_deroulant.offsetWidth > 15 ? "none" : "blur(2.5px)"
 });
+}
 // ____________________________________________________________________________________________________________________
 //                                         SEARCHBAR
 

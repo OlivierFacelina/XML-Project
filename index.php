@@ -52,7 +52,6 @@ $imgUrl = $xml->xpath('//enclosure/@url');
         <nav class="web-nav" id="web-nav">
             <a id="logo" href=""><img src="./assets/images/logo.png" alt="FluXML Logo" class="logo"></a>
             <div class="nav-section">
-                <a href="" class="nav-item"><img src="./assets/images/searchnormal.png" alt="Rechercher" class="nav-icon" id="search-icon"></a>
                 <a href="" class="nav-item" id="moon"><img src="./assets/images/moon.png" alt="Mode" class="nav-icon" id="moon-icon"></a>
                 <a href="favorites.php" class="nav-item" id="heart"><img src="./assets/images/heart.png" alt="Rechercher" class="nav-icon" id="heart-emoji"></a>
                 <a class="nav-item" id="animrubrique"><img src="./assets/images/infocircle.png" alt="Rechercher" class="nav-icon" id="infocircle-icon"></a>
@@ -80,9 +79,8 @@ $imgUrl = $xml->xpath('//enclosure/@url');
                     <div class="search-section">
                         <a href="" class=""><img src="./assets/images/searchnormal.png" alt="Rechercher" id="search-icon" class="search-icon"></a>
                         <input type="text" placeholder="Rechercher..." class="search-input" id="search-input">
-                        <ul id="search-results"></ul>
                         <select name="category" id="category">
-                            <option value="">Toutes les catégories</option>
+                            <option value="">Toutes catégories</option>
                             <option value="Insolite">Insolite</option>
                             <option value="Politique">Politique</option>
                             <option value="Sport">Sport</option>
