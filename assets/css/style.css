@@ -67,12 +67,12 @@ nav {
 .nav-icon {
     width: 2vw;
     margin-block: 2vh;
-    transition: 0.3s;
+    /* transition: 0.3s; */
 }
-.nav-icon:hover{
+/* .nav-icon:hover{
     scale: 1.1;
 
-}
+} */
 
 
 /* Nav Catégories */
