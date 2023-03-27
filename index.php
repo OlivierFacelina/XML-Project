@@ -92,7 +92,7 @@ $imgUrl = $xml->xpath('//enclosure/@url');
                     <div class="search-section">
                         <a href="" class=""><img src="./assets/images/searchnormal.png" alt="Rechercher" id="search-icon" class="search-icon"></a>
                         <input type="text" placeholder="Rechercher..." class="search-input" id="search-input">
-                        <select name="category" id="category">
+                        <select name="category" id="category" class="category-selector">
                             <option value="">Toutes catégories</option>
                             <option value="Insolite">Insolite</option>
                             <option value="Politique">Politique</option>
