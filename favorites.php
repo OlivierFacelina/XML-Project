@@ -1,5 +1,6 @@
 <?php 
 $categories = ['Insolite','Politique','Sport','Gastronomie','Culture','Cinéma','Musique','High-tech'];
+
 // Récupérer les valeurs stockées dans les cookies
 if(isset($_COOKIE['favorites'])){
     $valeurCookie = json_decode($_COOKIE['favorites'], true);
@@ -82,6 +83,11 @@ if(isset($_COOKIE['favorites'])){
     <section class="web-container">
         <main>
             <section class="container">
+
+            <?php if(empty($_COOKIE['favorites'])) { ?>
+            <p>Vous n'avez pas de favoris</p> <?php 
+            } ?>
+
                 <?php 
                 $lastCat = '';
                 // Afficher les titres et les descriptions des articles

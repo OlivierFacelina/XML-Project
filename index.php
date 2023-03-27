@@ -1,10 +1,6 @@
 <?php
 $categories = ['insolite','politique','sport','gastronomie','culture','cinema','musique','high-tech-internet/planete-appli'];
 
-if(empty($_COOKIE['favorites'])) {
-    echo "<p>Vous n'avez pas de favoris</p>";
-}
-
 if(isset($_COOKIE['favorites'])){
     $valeurCookie = json_decode($_COOKIE['favorites'], true);
     if (in_array('insolite', $valeurCookie)) {
