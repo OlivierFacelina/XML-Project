@@ -121,7 +121,7 @@ else {
 const input = document.querySelector('input');
 const elements = document.querySelectorAll('h3');
 const article = document.querySelector('.article');
-console.log(elements.textContent)
+// console.log(elements.textContent)
 
 input.addEventListener('input',(e) => {
   let content = e.target.value;
@@ -129,7 +129,7 @@ elements.forEach((category) => {
   if(category.textContent.indexOf(content) >= 0) {
     category.style.display = "";
     result = category.textContent.replace(content,`<span class="highlight">${content}</span>`)
-    console.log(result)
+    // console.log(result)
     category.innerHTML = `<h3>${result}</h3>`;
     // category.style.backgroundColor = "black"
   } else {
