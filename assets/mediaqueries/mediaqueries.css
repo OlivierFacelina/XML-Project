@@ -75,6 +75,10 @@ header {
     margin-right: 0;
 }
     /* Footer */
+    footer{
+        width: 100vw;
+        margin-left: 0;
+    }
 
     .footer-info {
         flex-direction: column;
