@@ -84,10 +84,6 @@ if(isset($_COOKIE['favorites'])){
         <main>
             <section class="container">
 
-            <?php if(empty($_COOKIE['favorites'])) { ?>
-            <p>Vous n'avez pas de favoris</p> <?php 
-            } ?>
-
                 <?php 
                 $lastCat = '';
                 // Afficher les titres et les descriptions des articles
