@@ -84,7 +84,7 @@ if(isset($_COOKIE['favorites'])){
         <main>
             <section class="container">
 
-            <?php if(empty($_COOKIE['favorites'])) { ?>
+            <?php if(!isset($_COOKIE['favorites'])) { ?>
             <p>Vous n'avez pas de favoris</p> <?php 
             } ?>
 
