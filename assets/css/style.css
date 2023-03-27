@@ -7,7 +7,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Roboto';
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 body {
@@ -168,6 +168,10 @@ main {
     margin-right: 5vw;
     padding-left: 3vw;
     z-index: 7;
+}
+
+.highlight {
+    background-color: yellow;
 }
 
 .category-selector {

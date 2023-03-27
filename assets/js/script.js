@@ -127,6 +127,10 @@ input.addEventListener('input',(e) => {
 elements.forEach((category) => {
   if(category.textContent.indexOf(content) >= 0) {
     category.style.display = "";
+    result = category.textContent.replace(content,`<span class="highlight">${content}</span>`)
+    console.log(result)
+    category.innerHTML = `<h3>${result}</h3>`;
+    // category.style.backgroundColor = "black"
   } else {
     category.style.display = "none"
   }
