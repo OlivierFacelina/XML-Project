@@ -82,21 +82,52 @@ if(isset($_COOKIE['favorites'])){
         <main>
             <section class="container">
                 <?php 
-                    // Afficher les titres et les descriptions des articles
-                    echo '<h2>'.$category.'</h2>';
-                    foreach($articles as $article) {
-                        echo '
-                                <div class="article">
-                                    <img src="'.$article['image'].'" class="article-img">
-                                    <div class="article-info">
-                                        <div class="article-top">
-                                            <h3 class="article-title">'.$article['title'].'</h2>
-                                            <h4 class="article-desc">'.$article['description'].'</p>
-                                        </div>
-                                        <h5 class="article-date">'.$article['pubDate'].'">
-                                    </div>
+                $lastCat = '';
+                // Afficher les titres et les descriptions des articles
+                foreach($articles as $article) {
+                if($lastCat === ''){
+                    echo '<h2>'.$article['category'].'</h2>';
+                    echo '
+                        <div class="article">
+                            <img src="'.$article['image'].'" class="article-img">
+                            <div class="article-info">
+                                <div class="article-top">
+                                    <h3 class="article-title">'.$article['title'].'</h2>
+                                    <h4 class="article-desc">'.$article['description'].'</p>
                                 </div>
-                            ';
+                                <h5 class="article-date">'.$article['pubDate'].'">
+                            </div>
+                        </div>
+                    ';
+                }elseif( $lastCat === $article['category']) {
+                    echo '
+                        <div class="article">
+                            <img src="'.$article['image'].'" class="article-img">
+                            <div class="article-info">
+                                <div class="article-top">
+                                    <h3 class="article-title">'.$article['title'].'</h2>
+                                    <h4 class="article-desc">'.$article['description'].'</p>
+                                </div>
+                            <h5 class="article-date">'.$article['pubDate'].'">
+                            </div>
+                        </div>
+                    ';
+                } else {
+                    echo '<h2>'.$article['category'].'</h2>';
+                    echo '
+                    <div class="article">
+                        <img src="'.$article['image'].'" class="article-img">
+                        <div class="article-info">
+                            <div class="article-top">
+                                <h3 class="article-title">'.$article['title'].'</h2>
+                                <h4 class="article-desc">'.$article['description'].'</p>
+                            </div>
+                            <h5 class="article-date">'.$article['pubDate'].'">
+                        </div>
+                    </div>
+                    ';
+                }
+                $lastCat = $article['category'];            
                 } ?>
             </section>
         </main>
