@@ -73,7 +73,17 @@ header {
 .article-img{
     margin-right: 0;
 }
+    /* Footer */
 
+    .footer-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-info-item {
+        width: 80vw;
+        margin-bottom: 6vh;
+    }
 }  
 
 
