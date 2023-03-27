@@ -44,11 +44,12 @@ header {
 .nav-section{
     flex-direction: row;
     padding-top: 0;
-    gap:0.5em;
+    gap:1.5em;
 
     padding-right: 1em;
 }
 .nav-icon{
+    width: 5vw;
     margin-block: 0;
 }
 .logo{
