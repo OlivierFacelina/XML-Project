@@ -112,7 +112,7 @@ $imgUrl = $xml->xpath('//enclosure/@url');
                     <?php } else { ?>
                         <h1 class="page-title"><?= $categoryNames[0] ?></h1>
                     <?php } ?>
-</div>
+                </div>
 
                 <hr>
 

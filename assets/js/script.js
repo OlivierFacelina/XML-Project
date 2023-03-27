@@ -16,7 +16,7 @@ if (isDarkMode) {
   navbar.classList.add('dark-mode');
   moonIcon.setAttribute('src', './assets/images/sunlight.png');
   moonIcon.setAttribute('alt', 'Mode nuit');
-  searchIcon.setAttribute('src', './assets/images/searchlight.png');
+  searchIcon.setAttribute('src', './assets/images/searchnormal.png');
   heartEmoji.setAttribute('src', './assets/images/heartlight.png');
   infocircleIcon.setAttribute('src', './assets/images/infocirclelight.png');
 } else {
@@ -41,7 +41,7 @@ moonIcon.addEventListener('click', (event) => {
     navbar.classList.add('dark-mode');
     moonIcon.setAttribute('src', './assets/images/sunlight.png');
     moonIcon.setAttribute('alt', 'Mode nuit');
-    searchIcon.setAttribute('src', './assets/images/searchlight.png');
+    searchIcon.setAttribute('src', './assets/images/searchnormal.png');
     heartEmoji.setAttribute('src', './assets/images/heartlight.png');
     infocircleIcon.setAttribute('src', './assets/images/infocirclelight.png');
   }
@@ -118,57 +118,67 @@ else {
 // ____________________________________________________________________________________________________________________
 //                                         SEARCHBAR
 
-const categories = ['Insolite','Politique','Sport','Gastronomie','Culture','Cinéma','Musique','High-tech'];
-const searchForm = document.getElementById('search-form');
-const searchInput = document.getElementById('search-input');
-const categorySelect = document.getElementById('category');
+const input = document.querySelector('input');
+const elements = document.getElementById('#articles');
+console.log(elements)
 
-// Flux correspondant à chaque catégorie
-const feeds = {
-  'Insolite': 'http://www.lepoint.fr/insolite/rss.xml',
-  'Politique': 'http://www.lepoint.fr/politique/rss.xml',
-  'Sport': 'http://www.lepoint.fr/sport/rss.xml',
-  'Gastronomie': 'http://www.lepoint.fr/gastronomie/rss.xml',
-  'Culture': 'http://www.lepoint.fr/culture/rss.xml',
-  'Cinéma': 'http://www.lepoint.fr/cinema/rss.xml',
-  'Musique': 'http://www.lepoint.fr/musique/rss.xml',
-  'High-tech': 'http://www.lepoint.fr/high-tech-internet/planete-appli/rss.xml'
-};
-
-function searchCategories() {
-  // On va récup la valeur de l'input de recherche et la catégorie sélectionnée
-  const searchString = searchInput.value.toLowerCase();
-  const category = categorySelect.value;
-
-  // On filtre les catégories qui correspondent à la recherche
-  let filteredCategories;
-  if (category === '') {
-    // Si y a rien, filtrer toutes les catégories
-    filteredCategories = categories.filter((category) => {
-      return category.toLowerCase().includes(searchString);
-    });
+input.addEventListener('input',(e) => {
+  let content = e.target.value;
+element.forEach((category) => {
+  if(category.textContent.indexOf(content) >= 0) {
+    category.style.display = "";
   } else {
-    // Si une catégorie est sélectionnée, filtrer uniquement cette catégorie
-    filteredCategories = [category];
+    category.style.display = "none"
   }
+})
+})
 
-  // On obtient les flux correspondant aux catégories filtrées
-  const filteredFeeds = filteredCategories.map((category) => {
-    return feeds[category];
-  });
+// const categories = ['Insolite','Politique','Sport','Gastronomie','Culture','Cinéma','Musique','High-tech'];
+// const searchForm = document.getElementById('search-form');
+// const searchInput = document.getElementById('search-input');
+// const categorySelect = document.getElementById('category');
 
-  // On redirige l'utilisateur vers les flux correspondants
-  window.location.href = filteredFeeds.join(',');
-}
+// // Flux correspondant à chaque catégorie
+// const feeds = {
+//   'Insolite': 'http://www.lepoint.fr/insolite/rss.xml',
+//   'Politique': 'http://www.lepoint.fr/politique/rss.xml',
+//   'Sport': 'http://www.lepoint.fr/sport/rss.xml',
+//   'Gastronomie': 'http://www.lepoint.fr/gastronomie/rss.xml',
+//   'Culture': 'http://www.lepoint.fr/culture/rss.xml',
+//   'Cinéma': 'http://www.lepoint.fr/cinema/rss.xml',
+//   'Musique': 'http://www.lepoint.fr/musique/rss.xml',
+//   'High-tech': 'http://www.lepoint.fr/high-tech-internet/planete-appli/rss.xml'
+// };
 
-// Quand on valide, ça envoie les données et ça appelle la fonction définie plus haut
-searchForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  searchCategories();
-});
+// function searchCategories() {
+//   // On va récup la valeur de l'input de recherche et la catégorie sélectionnée
+//   const searchString = searchInput.value.toLowerCase();
+//   const category = categorySelect.value;
 
-// category.addEventListener('click', (event) => {
-//   console.log("oui");
-//   var categoryName = category[0].textContent;
-//   window.open("/php/XML-Project/" + categoryName + ".php");
+//   // On filtre les catégories qui correspondent à la recherche
+//   let filteredCategories;
+//   if (category === '') {
+//     // Si y a rien, filtrer toutes les catégories
+//     filteredCategories = categories.filter((category) => {
+//       return category.toLowerCase().includes(searchString);
+//     });
+//   } else {
+//     // Si une catégorie est sélectionnée, filtrer uniquement cette catégorie
+//     filteredCategories = [category];
+//   }
+
+//   // On obtient les flux correspondant aux catégories filtrées
+//   const filteredFeeds = filteredCategories.map((category) => {
+//     return feeds[category];
+//   });
+
+//   // On redirige l'utilisateur vers les flux correspondants
+//   window.location.href = filteredFeeds.join(',');
+// }
+
+// // Quand on valide, ça envoie les données et ça appelle la fonction définie plus haut
+// searchForm.addEventListener('submit', (event) => {
+//   event.preventDefault();
+//   searchCategories();
 // });
+
