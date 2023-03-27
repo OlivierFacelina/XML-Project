@@ -120,6 +120,7 @@ else {
 
 const input = document.querySelector('input');
 const elements = document.querySelectorAll('h3');
+const article = document.querySelector('.article');
 console.log(elements.textContent)
 
 input.addEventListener('input',(e) => {
@@ -132,7 +133,7 @@ elements.forEach((category) => {
     category.innerHTML = `<h3>${result}</h3>`;
     // category.style.backgroundColor = "black"
   } else {
-    category.style.display = "none"
+    article.style.display = "none"
   }
 })
 })
