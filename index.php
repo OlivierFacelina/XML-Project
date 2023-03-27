@@ -70,7 +70,10 @@ $imgUrl = $xml->xpath('//enclosure/@url');
             <div id="time_barre"></div>
         </div>
     </div>
-    <div class="texte_loadingscreen"><h1>Bienvenue sur FluXML</h1></div>
+    <div class="texte_loadingscreen">
+        <h1>Bienvenue sur FluXML</h1>
+        <h6>Hector LAVERNHE - Hector DEAL - Hawksley MOUQUET - Olivier FACELINA - Tom MERGUI</h6>
+    </div>
     </div>
 </div>
 
