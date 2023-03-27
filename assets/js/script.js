@@ -63,7 +63,7 @@ let isActive = false
 favorites.forEach(element => { 
   element.addEventListener('click', () => {
     if (isActive) {
-      isActive = false
+      // isActive = false
       element.classList.replace("fa-solid","fa-regular");
       const index = values.indexOf(element.id);
       if (index !== -1) {
@@ -72,15 +72,24 @@ favorites.forEach(element => {
       // alert("Favori désactivé.")
     }
     else {
-      isActive = true
+      // isActive = true
       element.classList.replace("fa-regular","fa-solid");
       values.push(element.id);
       // Enregistrement cookies
       // console.log(element.id)
     }
+    isActive = !isActive
+    localStorage.setItem("isActive",isActive)
+    localStorage.getItem("isActive")
     document.cookie = `favorites=${JSON.stringify(values)};expires=Thu, 01 Jan 2099 00:00:00 UTC;path=/`;
   })
 });
+
+// window.addEventListener("load", () => {
+//   if(favorites.includes(isActive)) {
+//     localStorage.getItem("isActive")
+//   }
+// })
 
 // On va récup le cookie existant grâce à cette fonction
 // function getCookie(name) {
