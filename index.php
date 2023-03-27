@@ -49,13 +49,14 @@ $imgUrl = $xml->xpath('//enclosure/@url');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregateur</title>
+    <title>FluXML - Le Meilleur Agregateur du Monde !</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/mediaqueries/mediaqueries.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link rel="icon" type="image/x-icon" href="./assets/images/logo.png">
 </head>
 <body>
 
