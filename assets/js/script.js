@@ -119,12 +119,12 @@ else {
 //                                         SEARCHBAR
 
 const input = document.querySelector('input');
-const elements = document.getElementById('#articles');
-console.log(elements)
+const elements = document.querySelectorAll('h3');
+console.log(elements.textContent)
 
 input.addEventListener('input',(e) => {
   let content = e.target.value;
-element.forEach((category) => {
+elements.forEach((category) => {
   if(category.textContent.indexOf(content) >= 0) {
     category.style.display = "";
   } else {
