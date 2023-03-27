@@ -67,6 +67,7 @@ main {
 }
 
 .container {
+    margin-top: 5em;
     width: 85%;
 }
 
@@ -199,7 +200,7 @@ footer {
 
 .category-nav {
     /* à mettre en none pour dev en attendant la fonctionnalité css */
-    display: flex;
+    display: none;
     flex-direction: row;
     justify-content: center;
     align-items: center;

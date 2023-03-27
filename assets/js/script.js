@@ -187,3 +187,46 @@ elements.forEach((category) => {
 //   searchCategories();
 // });
 
+
+
+
+
+
+
+
+
+// JS FOR LOADING SCREEN
+
+const black_screen = document.getElementById("blackscreen");
+const headershow = document.querySelector(".headershow");
+const sectionshow = document.querySelector(".sectionshow");
+
+const chargement = document.getElementById("time_barre");
+const imgapple = document.getElementById("apple_logo_pomme");
+// ------------------------- //
+
+// Foncion qui permet de mettre un delay------------
+function delay(milliseconds){
+    return new Promise(resolve => {
+        setTimeout(resolve, milliseconds);
+    });
+}
+// ------------------------------------------------
+
+async function show_blackscreen() {
+for (let index = 0; index <= 10000;) {
+    await delay(10)
+    chargement.style.width = parseFloat(index/100) + "%";
+    index += 80
+};
+
+black_screen.style.opacity = 0;
+for (let index = 0; index <= 50;) {
+    await delay(30)
+    index += 1
+};
+black_screen.style.display = "none";
+headershow.style.display = "flex";
+sectionshow.style.display = "block";
+};
+show_blackscreen();

@@ -22,6 +22,10 @@ body::-webkit-scrollbar{
     display: none;
 }
 
+.show{
+    display: none;
+}
+
 header {
     display: flex;
     position: fixed;
@@ -41,6 +45,7 @@ nav {
 /* Nav Site */
 .logo {
     width: 3.5vw;
+    height: 3.5vw;
     padding-top: 2vh;
 }
 
@@ -308,3 +313,62 @@ footer {
     font-size: 0.7em;
     text-align: center;
 }
+
+
+
+/* LOBBY */
+#blackscreen {
+    display: block;
+    position: absolute;
+    top:0;
+  
+    height: 100dvh;
+    width: 100dvw;
+  
+    background: white;
+  
+    z-index: 99;
+  
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+  }
+  #blackscreen h1 {
+    margin: 0;
+  }
+  .content_loadingscreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+    color: rgba(74, 137, 162, 0.9);
+  
+    text-align: center;
+  
+    height: 100dvh;
+    
+    gap: 2em;
+  }
+  #logo {
+    display: flex;
+    justify-content: center;
+    height: 120px;
+  }
+  .chargement_barre {
+    height: 1dvh;
+    width: 30dvw;
+  
+    background: whitesmoke;
+    border-radius: 10px;
+  
+    overflow: hidden;
+  }
+  #time_barre {
+    height: 1dvh;
+    width: 405px;
+  
+    background: rgba(74, 137, 162, 0.9);
+  }
+  
+  
+  /* -------------------------------------------------------------------------------------- */

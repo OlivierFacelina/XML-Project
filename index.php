@@ -58,7 +58,22 @@ $imgUrl = $xml->xpath('//enclosure/@url');
     />
 </head>
 <body>
-    <header>
+
+<div id="blackscreen">
+    <div class="content_loadingscreen">
+    <div class="logo_flux">
+        <img src="./assets/images/logo.png" alt="logo" id="logo">
+    </div>
+    <div class="barre_loadingscreen">
+        <div class="chargement_barre">
+            <div id="time_barre"></div>
+        </div>
+    </div>
+    <div class="texte_loadingscreen"><h1>Bienvenue sur FluXML</h1></div>
+    </div>
+</div>
+
+    <header class="headershow">
         <nav class="web-nav" id="web-nav">
             <a id="logo" href="./index.php"><img src="./assets/images/logo.png" alt="FluXML Logo" class="logo"></a>
             <div class="nav-section">
@@ -85,7 +100,7 @@ $imgUrl = $xml->xpath('//enclosure/@url');
         </nav>
     </header>
 
-    <section class="web-container">
+    <section class="web-container sectionshow">
         <main>
             <section class="container" id="anim">
                 <form id="search-form">
