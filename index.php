@@ -1,31 +1,41 @@
 <?php
-$categories = ['Insolite','Politique','Sport','Gastronomie','Culture','Cinéma','Musique','High-tech'];
+$categories = ['insolite','politique','sport','gastronomie','culture','cinema','musique','high-tech-internet/planete-appli'];
 
 // Switch case si l'utilisateur a choisi ce cookie alors on lui met ce flux
 if(isset($_COOKIE['favorites'])){
     $valeurCookie = json_decode($_COOKIE['favorites'], true);
-    if (in_array('Insolite', $valeurCookie)) {
+    if (in_array('insolite', $valeurCookie)) {
         // echo 'Tu as choisi le thème : Insolite';
         $xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
-    } elseif (in_array('Politique',$valeurCookie)) {
+    } elseif (in_array('politique',$valeurCookie)) {
         $xml = simplexml_load_file('http://www.lepoint.fr/politique/rss.xml'); 
-    } elseif (in_array('Sport',$valeurCookie)) {
+    } elseif (in_array('sport',$valeurCookie)) {
         $xml = simplexml_load_file('http://www.lepoint.fr/sport/rss.xml');
-    } elseif (in_array('Gastronomie',$valeurCookie)) {
+    } elseif (in_array('gastronomie',$valeurCookie)) {
         $xml = simplexml_load_file('http://www.lepoint.fr/gastronomie/rss.xml');
-    } elseif (in_array('Culture',$valeurCookie)) {
+    } elseif (in_array('culture',$valeurCookie)) {
         $xml = simplexml_load_file('http://www.lepoint.fr/culture/rss.xml');
-    } elseif (in_array('Cinéma',$valeurCookie)) {
+    } elseif (in_array('cinema',$valeurCookie)) {
         $xml = simplexml_load_file('http://www.lepoint.fr/cinema/rss.xml');
-    } elseif (in_array('Musique',$valeurCookie)) {
+    } elseif (in_array('musique',$valeurCookie)) {
         $xml = simplexml_load_file('http://www.lepoint.fr/musique/rss.xml');
-    } elseif (in_array('High-tech',$valeurCookie)) {
+    } elseif (in_array('high-tech-internet/planete-appli',$valeurCookie)) {
         $xml = simplexml_load_file('http://www.lepoint.fr/high-tech-internet/planete-appli/rss.xml');
     } 
 }
+$xml = simplexml_load_file('https://www.lepoint.fr/'.$categories[0].'/rss.xml'); 
+for ($i = 0; $i < 8; $i++) {
+    $xml = simplexml_load_file('https://www.lepoint.fr/'.$categories[$i].'/rss.xml'); 
+    $categoryName = $xml->xpath('//category');
+    $categoryNames[] = $categoryName[0];
+    // Création d'une deuxième variables 
+}
 
-// $xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
-$xml = simplexml_load_file('https://www.lepoint.fr/insolite/rss.xml'); 
+if (isset($_GET["id"])){
+    $xml = simplexml_load_file('https://www.lepoint.fr/'.$categories[$_GET["id"]].'/rss.xml'); 
+}
+// http://localhost/php/Projet_XML/XML-Project/?id=
+
 $titles = $xml->xpath('//title');
 $descriptions = $xml->xpath('//description');
 $publishDates = $xml->xpath('//pubDate');
@@ -62,11 +72,14 @@ $imgUrl = $xml->xpath('//enclosure/@url');
             <div class="category-hr">
             </div>
                 <div class="categories" id="mask">
-                    <?php for ($i = 0; $i < count($categories); $i++) { ?>
+                    <?php foreach ($categoryNames as $key => $categoryName) { ?>
                         <div class="title-like">
-                        <h2 class="category-title"><?= $categories[$i] ?></h2>
-                        <i class="fa-regular fa-heart" id="<?= $categories[$i]?>"></i>
+                        <a href="?id=<?= $key ?>">                  
+                        <h2 class="category-title"><?= $categoryName ?></h2>
+                        </a>
+                        <i class="fa-regular fa-heart" id="<?= $categoryName ?>"></i>
                         </div>
+
                     <?php } ?>
                 </div>
         </nav>
@@ -94,8 +107,13 @@ $imgUrl = $xml->xpath('//enclosure/@url');
                 </form>
 
                 <div class="category-upper">
-                    <h1 class="page-title">Actualité</h1>
-                </div>
+                    <?php if (isset($_GET["id"]) && isset($categoryNames[$_GET["id"]])) { ?>
+                        <h1 class="page-title"><?= $categoryNames[$_GET["id"]] ?></h1>
+                    <?php } else { ?>
+                        <h1 class="page-title"><?= $categoryNames[0] ?></h1>
+                    <?php } ?>
+</div>
+
                 <hr>
 
                 <section id="articles">
@@ -103,7 +121,7 @@ $imgUrl = $xml->xpath('//enclosure/@url');
                         for ($i = 2; $i < 10; $i++) {
                     ?>
                         <div class="article">
-                            <a href="<?= $links[$i] ?>, " target="blank"><img src="<?= $imgUrl[$i - 2] ?>" alt="" class="article-img"></a>
+                            <a href="<?= $links[$i] ?> " target="blank"><img src="<?= $imgUrl[$i - 2] ?>" alt="" class="article-img"></a>
                             <div class="article-info">
                                 <div class="article-top">
                                     <h3 class="article-title"><?= $titles[$i] ?></h3>

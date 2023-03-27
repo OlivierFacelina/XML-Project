@@ -6,14 +6,14 @@ if(isset($_COOKIE['favorites'])){
 
     // Tableau associatif qui lie les thèmes aux URLs des flux RSS
     $urls = array(
-        'Insolite' => 'https://www.lepoint.fr/insolite/rss.xml',
+        'Insolites' => 'https://www.lepoint.fr/insolite/rss.xml',
         'Politique' => 'http://www.lepoint.fr/politique/rss.xml',
-        'Sport' => 'http://www.lepoint.fr/sport/rss.xml',
+        'Sports' => 'http://www.lepoint.fr/sport/rss.xml',
         'Gastronomie' => 'http://www.lepoint.fr/gastronomie/rss.xml',
         'Culture' => 'http://www.lepoint.fr/culture/rss.xml',
         'Cinéma' => 'http://www.lepoint.fr/cinema/rss.xml',
         'Musique' => 'http://www.lepoint.fr/musique/rss.xml',
-        'High-tech' => 'http://www.lepoint.fr/high-tech-internet/planete-appli/rss.xml'
+        'Planète Appli' => 'http://www.lepoint.fr/high-tech-internet/planete-appli/rss.xml'
     );
 
     // Afficher les flux RSS en fonction de chaque valeur stockée dans les cookies
@@ -59,7 +59,6 @@ if(isset($_COOKIE['favorites'])){
         <nav class="web-nav" id="web-nav">
             <a id="logo" href="./index.php"><img src="./assets/images/logo.png" alt="FluXML Logo" class="logo"></a>
             <div class="nav-section">
-                <a href="" class="nav-item"><img src="./assets/images/searchnormal.png" alt="Rechercher" class="nav-icon" id="search-icon"></a>
                 <a href="" class="nav-item" id="moon"><img src="./assets/images/moon.png" alt="Mode" class="nav-icon" id="moon-icon"></a>
                 <a href="" class="nav-item" id="heart"><img src="./assets/images/heart.png" alt="Rechercher" class="nav-icon" id="heart-emoji"></a>
                 <a class="nav-item" id="animrubrique"><img src="./assets/images/infocircle.png" alt="Rechercher" class="nav-icon" id="infocircle-icon"></a>
