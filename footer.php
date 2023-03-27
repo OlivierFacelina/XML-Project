@@ -20,9 +20,9 @@
                     <div class="footer-info-item">
                         <h3 class="footer-title">Réseaux sociaux</h3>
                         <div class="footer-desc-section">
-                            <p class="footer-desc">Twitter</p>
-                            <p class="footer-desc">Instagram</p>
-                            <p class="footer-desc">Facebook</p>
+                            <a href="https://twitter.com/?lang=fr" class="footer-a"><p class="footer-desc">Twitter</p></a>
+                            <a href="https://www.instagram.com/?hl=fr" class="footer-a"><p class="footer-desc">Instagram</p></a>
+                            <a href="https://fr-fr.facebook.com/" class="footer-a"><p class="footer-desc">Facebook</p></a>
                         </div>
                     </div>
                 </section>
