@@ -282,6 +282,12 @@ footer {
 
 .footer-desc {
     margin-bottom: 1vh;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.footer-a {
+    text-decoration: none;
 }
 
 .copyright {
