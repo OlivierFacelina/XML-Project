@@ -211,7 +211,6 @@ const headershow = document.querySelector(".headershow");
 const sectionshow = document.querySelector(".sectionshow");
 
 const chargement = document.getElementById("time_barre");
-const imgapple = document.getElementById("apple_logo_pomme");
 // ------------------------- //
 
 // Foncion qui permet de mettre un delay------------
