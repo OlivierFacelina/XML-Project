@@ -280,10 +280,15 @@ footer {
     margin-bottom: 1vh;
     cursor: pointer;
     color: #ffffff;
+    transition: 0.25s;
 }
 
 .footer-a {
     text-decoration: none;
+}
+
+.footer-desc:hover {
+    color: rgba(112, 188, 216, 0.8);
 }
 
 .copyright {
