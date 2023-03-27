@@ -240,6 +240,10 @@ main {
 .article-img {
     max-width: 22vw;
     margin-right: 3vw;
+    transition: 0.3s;
+}
+.article-img:hover{
+    scale: 1.1;
 }
 
 .article-title {

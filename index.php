@@ -1,6 +1,10 @@
 <?php
 $categories = ['insolite','politique','sport','gastronomie','culture','cinema','musique','high-tech-internet/planete-appli'];
 
+if(empty($_COOKIE['favorites'])) {
+    echo "<p>Vous n'avez pas de favoris</p>";
+}
+
 // Switch case si l'utilisateur a choisi ce cookie alors on lui met ce flux
 if(isset($_COOKIE['favorites'])){
     $valeurCookie = json_decode($_COOKIE['favorites'], true);
